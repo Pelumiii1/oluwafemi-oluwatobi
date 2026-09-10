@@ -8,16 +8,16 @@ export default function Home() {
         src="/Background pattern decorative.jpg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 w-full h-full object-cover mix-blend-multiply top-[-150px]"
+        className="pointer-events-none absolute inset-0 w-full h-full object-cover mix-blend-multiply -top-37.5"
       />
 
       {/* Header */}
-      <header className="relative z-10 flex items-center justify-center space-x-50 px-8 md:px-16 py-6 font-serif text-[11px] text-black lg:text-[14px]">
+      <header className="relative z-10 flex items-center justify-center space-x-10 md:space-x-50 px-8 md:px-16 py-6 font-serif text-[8px] text-black lg:text-[14px] text-center">
         <div className="flex items-center gap-2 tracking-[0.18em] uppercase">
-          <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+          <span className="w-2 h-2 rounded-full bg-accent hidden lg:inline-block" />
           Portfolio / In Progress
         </div>
-        <div className="tracking-[0.14em] uppercase">
+        <div className="tracking-[0.14em] uppercase ">
           Oluwafemi&nbsp;|&nbsp;Product Designer
         </div>
       </header>
