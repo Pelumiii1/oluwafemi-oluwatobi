@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import backicon from '../../../public/icons/back.png'
+import bag from "../../../public/icons/bag.png"
+import calendar from "../../../public/icons/calendar.png"
 
 interface SectionItem {
   id: string;
@@ -83,7 +86,7 @@ export default function SwapXNextCaseStudy() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white font-sans relative">
+    <div className="min-h-screen bg-[#EDEDEB] text-neutral-900 selection:bg-neutral-900 selection:text-white font-sans relative">
       {/* Right Floating Scroll Progress Indicator */}
       <aside
         aria-label="Page scroll progress"
@@ -105,8 +108,8 @@ export default function SwapXNextCaseStudy() {
               >
                 <span
                   className={`block w-4 h-[1.5px] rounded-full transition-all duration-200 ${isActive
-                      ? "bg-neutral-900 w-5"
-                      : "bg-neutral-300 group-hover:bg-neutral-500"
+                    ? "bg-neutral-900 w-5"
+                    : "bg-neutral-300 group-hover:bg-neutral-500"
                     }`}
                 />
                 {/* Tooltip on hover */}
@@ -130,20 +133,7 @@ export default function SwapXNextCaseStudy() {
             WebkitBackdropFilter: "blur(19.9px)",
           }}
         >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="group-hover:-translate-x-1 transition-transform"
-          >
-            <polyline points="9 14 4 9 9 4" />
-            <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
-          </svg>
+          <Image src={backicon} alt="back" width={20} height={20} />
           <span>Back</span>
         </Link>
       </div>
@@ -153,49 +143,22 @@ export default function SwapXNextCaseStudy() {
 
         {/* Project Header Title & Metadata */}
         <div className="pb-10 sm:pb-12">
-          <h1 className="text-[38px] sm:text-[48px] md:text-[56px] font-bold text-neutral-950 tracking-tight leading-tight">
+          <h1 className="text-[38px] sm:text-[48px] md:text-[56px] font-bold text-neutral-950 tracking-tight leading-tight font-rounded">
             SwapXNext
           </h1>
 
           {/* Metadata Badges */}
-          <div className="mt-4 flex flex-wrap items-center gap-6 text-[13.5px] sm:text-[14.5px] text-neutral-600 font-medium">
+          <div className="mt-4 flex flex-wrap items-center gap-6 text-[13.5px] sm:text-[14.5px] text-black font-normal font-rounded">
             {/* Category / Platform Tag */}
             <div className="inline-flex items-center gap-2">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-neutral-500"
-              >
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
+              <Image src={bag} alt="" width={20} height={20} />
               <span>Mobile Application | Website | Admin Dashboard</span>
             </div>
 
             {/* Year Tag */}
             <div className="inline-flex items-center gap-2">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-neutral-500"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
+              <Image src={calendar} alt="" width={20} height={20} />
+
               <span>2026</span>
             </div>
           </div>
@@ -213,18 +176,18 @@ export default function SwapXNextCaseStudy() {
         >
           {/* Left Column Label */}
           <div className="lg:col-span-3">
-            <span className="text-[14.5px] font-medium text-neutral-500 select-none">
+            <span className="text-[14.5px] text-[#08080899] font-medium select-none">
               Overview
             </span>
           </div>
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
+            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
               Making Crypto-to-Naira Conversion Feel Effortless
             </h2>
 
-            <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+            <p className="mt-4 text-[15px] sm:text-[16px] text-[#5C5C5C] leading-relaxed font-normal">
               SwapXnext is a simple crypto-to-Naira platform designed to make
               selling Bitcoin feel straightforward. Instead of navigating the
               complexity of traditional crypto exchanges, users can convert their
@@ -236,18 +199,17 @@ export default function SwapXNextCaseStudy() {
 
             {/* Overview Hero Mockup Banner */}
             <div
-              onClick={() => setLightboxImage("/images/project/swapxnext.png")}
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl bg-[#B8B8B8] overflow-hidden flex items-center justify-center p-4 sm:p-8 cursor-zoom-in transition-all duration-300 hover:shadow-xl group"
+              onClick={() => setLightboxImage("/projects/swapxnext/img1.png")}
+              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
             >
-              <div className="relative w-full max-w-[620px] aspect-[4/3] flex items-center justify-center">
-                <Image
-                  src="/images/project/swapxnext.png"
-                  alt="SwapXNext app held in hand preview"
-                  fill
-                  priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
+              <Image
+                src="/projects/swapxnext/img1.png"
+                alt="SwapXNext app held in hand preview"
+                width={700}
+                height={700}
+                priority
+                className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+              />
             </div>
           </div>
         </section>
@@ -264,14 +226,14 @@ export default function SwapXNextCaseStudy() {
         >
           {/* Left Column Label */}
           <div className="lg:col-span-3">
-            <span className="text-[14.5px] font-medium text-neutral-500 select-none">
+            <span className="text-[14.5px] font-medium text-[#08080899] select-none">
               The Problem
             </span>
           </div>
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
+            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
               Selling Crypto Was More Complicated Than It Needed to Be
             </h2>
 
@@ -306,45 +268,303 @@ export default function SwapXNextCaseStudy() {
           </div>
 
           {/* Right Column Content */}
-          <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
-              Designing a Simpler Way to Convert Crypto
-            </h2>
+          <div className="lg:col-span-9 space-y-12 sm:space-y-16">
+            <div>
+              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+                Designing a Simpler Way to Convert Crypto
+              </h2>
 
-            <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
-              We designed SwapXnext around one core action: convert crypto and
-              receive Naira. The experience removes unnecessary complexity and
-              puts the most important information upfront, the asset being
-              converted, the current rate, the amount the user will receive, and
-              their destination bank account. Rather than making users navigate
-              through a traditional trading interface, the conversion flow guides
-              them through a clear sequence from selecting an asset to receiving
-              their Naira. The result is a crypto experience that feels familiar,
-              transparent, and easy to navigate, even for users who aren’t
-              experienced crypto traders.
-            </p>
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                We designed SwapXnext around one core action: convert crypto and
+                receive Naira. The experience removes unnecessary complexity and
+                puts the most important information upfront, the asset being
+                converted, the current rate, the amount the user will receive, and
+                their destination bank account. Rather than making users navigate
+                through a traditional trading interface, the conversion flow guides
+                them through a clear sequence from selecting an asset to receiving
+                their Naira. The result is a crypto experience that feels familiar,
+                transparent, and easy to navigate, even for users who aren’t
+                experienced crypto traders.
+              </p>
 
-            {/* Design Solution 3-Phones Mockup Container */}
-            <div
-              onClick={() =>
-                setLightboxImage("/images/case-study/swapxnext/design-solution.png")
-              }
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl bg-[#F0F0F2] border border-neutral-200/70 overflow-hidden p-6 sm:p-10 flex items-center justify-center cursor-zoom-in transition-all duration-300 hover:shadow-xl group"
-            >
-              <div className="relative w-full max-w-[760px] aspect-[16/7] flex items-center justify-center">
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img2.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
                 <Image
-                  src="/images/case-study/swapxnext/design-solution.png"
-                  alt="SwapXNext Design Solution: Splash Screen, Home Screen, Markets Screen"
-                  fill
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                  src="/projects/swapxnext/img2.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
                 />
               </div>
             </div>
+
+            <div className="border-t border-dashed border-neutral-300 w-full" />
+
+            <div>
+              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+                User Onboarding & KYC
+              </h2>
+
+              <h3 className="text-black text-[20px] font-[500] mt-4">Building Trust Before the First Transaction</h3>
+
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                Because users are dealing with financial assets, verification needed to be simple without compromising the trust and security expected from a financial product. We designed a guided KYC experience that walks users through the required verification steps with clear instructions and feedback at each stage. The flow keeps users informed about their progress and makes it clear what information is required before they can start converting their assets. The goal was to make compliance feel like a natural part of onboarding rather than a frustrating barrier.
+              </p>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img3.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img3.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img4.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img4.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img5.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img5.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img6.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img6.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+            </div>
+
+            <div className="border-t border-dashed border-neutral-300 w-full" />
+
+            <div>
+              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+                Convert Assets
+              </h2>
+
+              <h3 className="text-black text-[20px] font-[500] mt-4">Turning Bitcoin Into Naira in Just a Few Steps</h3>
+
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                The conversion experience is at the heart of SwapXnext.
+                Users can select the crypto asset they want to sell, enter the amount, and immediately see the corresponding Naira value based on the current rate.
+                Before confirming, the experience clearly presents the transaction details so users know exactly what they're about to receive.
+                We focused on reducing uncertainty around one of the most important questions when selling crypto:
+                <br />
+                "How much will I actually get?"
+                <br />
+                Clear amounts, rates, validation states, and confirmation screens help users feel confident before completing the transaction.
+              </p>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img7.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img7.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img8.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img8.png"
+                  alt="SwapXNext app held in hand preview"
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+
+
+            </div>
+
+
+            <div className="border-t border-dashed border-neutral-300 w-full" />
+
+            <div>
+              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+                Favorite Coins & Notifications
+              </h2>
+
+              <h3 className="text-black text-[20px] font-[500] mt-4">Staying Updated Without Constantly Checking the App</h3>
+
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                Not every user wants to sell immediately. We introduced a favorite coin experience that allows users to keep track of the assets they're most interested in and receive notifications when there are relevant rate movements
+                <br />
+                Instead of constantly opening the app to check prices, users can stay informed and return when the timing feels right. This turns SwapXnext from a simple conversion tool into a more useful part of the user's crypto routine.
+              </p>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img9.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img9.png"
+                  alt=""
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+            </div>
+
+            <div className="border-t border-dashed border-neutral-300 w-full" />
+
+            <div>
+              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+                Transaction History
+              </h2>
+
+              <h3 className="text-black text-[20px] font-[500] mt-4">Making Every Transaction Easy to Track</h3>
+
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                Financial transactions need to feel traceable. We designed a dedicated transaction history experience where users can quickly see their previous conversions and understand the status of each transaction.
+                <br />
+                Each record provides the important details users need to reference later, creating transparency and reducing uncertainty after a transaction has been completed. Whether a transaction is successful, pending, or requires attention, the experience keeps users informed.
+              </p>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img10.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img10.png"
+                  alt=""
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+            </div>
+
+            <div className="border-t border-dashed border-neutral-300 w-full" />
+
+            <div>
+              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+                Other Screens
+              </h2>
+
+              <h3 className="text-black text-[20px] font-medium mt-4">Designing the Details That Complete the Experience</h3>
+
+
+              <h5 className="text-black font-medium text-[16px] mt-4">Notifications</h5>
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                Notifications keep users informed about important account activity, transaction updates, rate movements, and other relevant events. Rather than overwhelming users with alerts, the experience prioritizes information that can help them make decisions or take action.
+              </p>
+
+              <h5 className="text-black font-medium text-[16px] mt-4">Profile & Tiers</h5>
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                The profile and settings area gives users control over their account information, security preferences, notifications, and other personal settings. The screens were structured to make account management straightforward without taking attention away from the core product.
+              </p>
+
+              <h5 className="text-black font-medium text-[16px] mt-4">Security & Verification States</h5>
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                We also designed supporting states for authentication, KYC, verification, errors, pending transactions, and successful actions. These moments may only appear for a few seconds, but they play an important role in making financial interactions feel safe and predictable.
+              </p>
+
+              <h5 className="text-black font-medium text-[16px] mt-4">Empty, Loading & Error States</h5>
+              <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+                Every major flow was designed beyond the ideal scenario. Empty states help users understand what to do when they have no transaction history or haven't added an asset yet. Loading states provide feedback while information is being processed, while error states explain what went wrong and what the user can do next.
+                Together, these supporting screens helped create a more complete experience, one that doesn't just work when everything goes perfectly, but guides users through the moments in between.
+              </p>
+
+              <div
+                onClick={() => setLightboxImage("/projects/swapxnext/img11.png")}
+                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              >
+                <Image
+                  src="/projects/swapxnext/img11.png"
+                  alt=""
+                  width={700}
+                  height={700}
+                  priority
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                />
+              </div>
+            </div>
+
+            <div
+              onClick={() => setLightboxImage("/projects/swapxnext/img12.png")}
+              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+            >
+              <Image
+                src="/projects/swapxnext/img12.png"
+                alt=""
+                width={700}
+                height={700}
+                priority
+                className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+              />
+            </div>
+
+            <div
+              onClick={() => setLightboxImage("/projects/swapxnext/img13.png")}
+              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+            >
+              <Image
+                src="/projects/swapxnext/img13.png"
+                alt=""
+                width={700}
+                height={700}
+                priority
+                className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+              />
+            </div>
+
           </div>
-        </section>
+
+
+        </section >
 
         {/* Dashed Divider */}
-        <div className="border-t border-dashed border-neutral-300 w-full" />
+        < div className="border-t border-dashed border-neutral-300 w-full" />
 
         {/* ------------------------------------------------------------------ */}
         {/* SECTION 4: CONVERT ASSETS */}
@@ -356,174 +576,39 @@ export default function SwapXNextCaseStudy() {
           {/* Left Column Label */}
           <div className="lg:col-span-3">
             <span className="text-[14.5px] font-medium text-neutral-500 select-none">
-              Convert Assets
+              Impact & Results
             </span>
           </div>
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
             <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
-              Turning Bitcoin Into Naira in Just a Few Steps
+              Making Crypto Feel Less Complicated
             </h2>
 
-            <div className="mt-4 space-y-3.5 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
-              <p>The conversion experience is at the heart of SwapXnext.</p>
-              <p>
-                Users can select the crypto asset they want to sell, enter the
-                amount, and immediately see the corresponding Naira value based on
-                the current rate. Before confirming, the experience clearly
-                presents the transaction details so users know exactly what
-                they’re about to receive.
-              </p>
-              <p>
-                We focused on reducing uncertainty around one of the most
-                important questions when selling crypto:
-              </p>
-              <p className="font-semibold text-neutral-900 italic text-[16.5px] sm:text-[17.5px] pl-3 border-l-2 border-neutral-800">
-                &ldquo;How much will I actually get?&rdquo;
-              </p>
-              <p>
-                Clear amounts, rates, validation states, and confirmation screens
-                help users feel confident before completing the transaction.
-              </p>
-            </div>
-
-            {/* Convert Assets 3-Phones Mockup Container */}
-            <div
-              onClick={() =>
-                setLightboxImage("/images/case-study/swapxnext/convert-assets.png")
-              }
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl bg-[#F0F0F2] border border-neutral-200/70 overflow-hidden p-6 sm:p-10 flex items-center justify-center cursor-zoom-in transition-all duration-300 hover:shadow-xl group"
-            >
-              <div className="relative w-full max-w-[760px] aspect-[16/9] flex items-center justify-center">
-                <Image
-                  src="/images/case-study/swapxnext/convert-assets.png"
-                  alt="Convert Assets flow: Supported Assets, Select BTC Network, Confirm Payout Account"
-                  fill
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dashed Divider */}
-        <div className="border-t border-dashed border-neutral-300 w-full" />
-
-        {/* ------------------------------------------------------------------ */}
-        {/* SECTION 5: OTHER SCREENS */}
-        {/* ------------------------------------------------------------------ */}
-        <section
-          id="other-screens"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 py-12 sm:py-16 scroll-mt-10"
-        >
-          {/* Left Column Label */}
-          <div className="lg:col-span-3">
-            <span className="text-[14.5px] font-medium text-neutral-500 select-none">
-              Other Screens
-            </span>
-          </div>
-
-          {/* Right Column Content */}
-          <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
-              Designing the Details That Complete the Experience
-            </h2>
-
-            {/* Subsections List */}
-            <div className="mt-8 space-y-7 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
-              <div>
-                <h3 className="font-semibold text-neutral-900 text-[16.5px] sm:text-[17.5px] mb-1.5">
-                  Notifications
-                </h3>
-                <p>
-                  Notifications keep users informed about important account
-                  activity, transaction updates, rate movements, and other
-                  relevant events. Rather than overwhelming users with alerts, the
-                  experience prioritizes information that can help them make
-                  decisions or take action.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-neutral-900 text-[16.5px] sm:text-[17.5px] mb-1.5">
-                  Profile &amp; Tiers
-                </h3>
-                <p>
-                  The profile and settings area gives users control over their
-                  account information, security preferences, notifications, and
-                  other personal settings. The screens were structured to make
-                  account management straightforward without taking attention
-                  away from the core product.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-neutral-900 text-[16.5px] sm:text-[17.5px] mb-1.5">
-                  Security &amp; Verification States
-                </h3>
-                <p>
-                  We also designed supporting states for authentication, KYC,
-                  verification, errors, pending transactions, and successful
-                  actions. These moments may only appear for a few seconds, but
-                  they play an important role in making financial interactions feel
-                  safe and predictable.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-neutral-900 text-[16.5px] sm:text-[17.5px] mb-1.5">
-                  Empty, Loading &amp; Error States
-                </h3>
-                <p>
-                  Every major flow was designed beyond the ideal scenario. Empty
-                  states help users understand what to do when they have no
-                  transaction history or haven’t added an asset yet. Loading states
-                  provide feedback while information is being processed, while
-                  error states explain what went wrong and what the user can do
-                  next. Together, these supporting screens helped create a more
-                  complete experience, one that doesn’t just work when everything
-                  goes perfectly, but guides users through the moments in
-                  between.
-                </p>
-              </div>
-            </div>
-
-            {/* Other Screens Mockup Container */}
-            <div
-              onClick={() =>
-                setLightboxImage("/images/case-study/swapxnext/other-screens.png")
-              }
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl bg-[#F0F0F2] border border-neutral-200/70 overflow-hidden p-6 sm:p-10 flex items-center justify-center cursor-zoom-in transition-all duration-300 hover:shadow-xl group"
-            >
-              <div className="relative w-full max-w-[760px] aspect-[16/6] flex items-center justify-center">
-                <Image
-                  src="/images/case-study/swapxnext/other-screens.png"
-                  alt="Other supporting screens: Notification, KYC Verification, Tier Limits"
-                  fill
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-            </div>
-
-            {/* Closing Note */}
-            <p className="mt-8 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
-              Stay informed. Follow relevant assets and receive relevant rate
-              notifications. The product makes crypto more approachable by
-              focusing on the user’s actual goal rather than exposing them to
-              unnecessary complexity.
+            <p className="mt-4 space-y-3.5 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+              SwapXnext turned a traditionally complex crypto conversion process into a focused, easy-to-understand experience. Users can now:
+              Convert: Sell their crypto without navigating a traditional exchange.
+              <br />
+              Understand:  See rates and Naira equivalents before confirming.
+              <br />
+              Receive: Send converted funds directly to their bank account.
+              <br />
+              Track: Review previous transactions and their statuses.
+              <br />
+              Stay informed: Follow favourite assets and receive relevant rate notifications.
+              <br />
+              The product makes crypto more approachable by focusing on the user's actual goal rather than exposing them to unnecessary complexity.
             </p>
+
           </div>
         </section>
 
         {/* Dashed Divider */}
         <div className="border-t border-dashed border-neutral-300 w-full" />
 
-        {/* ------------------------------------------------------------------ */}
-        {/* SECTION 6: WHAT I LEARNT */}
-        {/* ------------------------------------------------------------------ */}
         <section
-          id="what-i-learnt"
+          id="convert"
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 py-12 sm:py-16 scroll-mt-10"
         >
           {/* Left Column Label */}
@@ -539,31 +624,21 @@ export default function SwapXNextCaseStudy() {
               Simplicity Is a Feature in Financial Products
             </h2>
 
-            <div className="mt-4 space-y-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
-              <p>
-                Working on SwapXnext reinforced an important lesson: financial
-                products don’t become easier because you show users more
-                information. They become easier when you show them the right
-                information at the right time.
-              </p>
-              <p>
-                Crypto already comes with unfamiliar concepts, fluctuating values,
-                and a natural layer of uncertainty. As a designer, my job was not
-                to hide that complexity, but to translate it into an experience
-                users could understand and trust.
-              </p>
-              <p>Every screen had to answer a simple question:</p>
-              <p className="font-semibold text-neutral-900 italic text-[16.5px] sm:text-[17.5px] pl-3 border-l-2 border-neutral-800">
-                &ldquo;What does the user need to know or do next?&rdquo;
-              </p>
-              <p>
-                That mindset helped shape a product that feels less like a crypto
-                exchange and more like a straightforward financial utility.
-              </p>
-            </div>
+            <p className="mt-4 space-y-3.5 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
+              Working on SwapXnext reinforced an important lesson: financial products don't become easier because you show users more information. They become easier when you show them the right information at the right time.
+              Crypto already comes with unfamiliar concepts, fluctuating values, and a natural layer of uncertainty. As a designer, my job was not to hide that complexity, but to translate it into an experience users could understand and trust.
+              <br />
+              Every screen had to answer a simple question:
+              <br />
+              "What does the user need to know or do next?"
+              <br />
+              That mindset helped shape a product that feels less like a crypto exchange and more like a straightforward financial utility.
+            </p>
+
           </div>
         </section>
-      </main>
+
+      </main >
 
       {/* ------------------------------------------------------------------ */}
       {/* BOTTOM CTA SECTION */}
@@ -675,51 +750,53 @@ export default function SwapXNextCaseStudy() {
       {/* ------------------------------------------------------------------ */}
       {/* LIGHTBOX MODAL */}
       {/* ------------------------------------------------------------------ */}
-      {lightboxImage && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setLightboxImage(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-in fade-in duration-200"
-        >
-          {/* Close button */}
-          <button
-            onClick={() => setLightboxImage(null)}
-            aria-label="Close modal"
-            className="absolute top-5 right-5 z-50 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-
-          {/* Modal Image */}
+      {
+        lightboxImage && (
           <div
-            className="relative max-w-5xl max-h-[88vh] w-full h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-in fade-in duration-200"
           >
-            <div className="relative w-full h-full flex items-center justify-center">
-              <Image
-                src={lightboxImage}
-                alt="Case study mockup enlarged"
-                fill
-                className="object-contain"
-                priority
-              />
+            {/* Close button */}
+            <button
+              onClick={() => setLightboxImage(null)}
+              aria-label="Close modal"
+              className="absolute top-5 right-5 z-50 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+
+            {/* Modal Image */}
+            <div
+              className="relative max-w-5xl max-h-[88vh] w-full h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-full flex items-center justify-center">
+                <Image
+                  src={lightboxImage}
+                  alt="Case study mockup enlarged"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )
+      }
+    </div >
   );
 }
