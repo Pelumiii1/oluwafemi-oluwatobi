@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ChatBubbleIcon,
   MailIcon,
@@ -125,9 +126,6 @@ const projects: Project[] = [
 ];
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isBookModalOpen, setIsBookModalOpen] = useState(false);
-  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [currentTime, setCurrentTime] = useState("9:45PM");
 
@@ -167,10 +165,7 @@ export default function Home() {
       {/* Right Content Area: Independently scrollable, takes remaining width */}
       <div className="flex-1 min-w-0 h-full overflow-y-auto flex flex-col justify-between">
         {/* Top Header */}
-        <Navbar
-          onBookCall={() => setIsBookModalOpen(true)}
-          onAboutMe={() => setIsAboutModalOpen(true)}
-        />
+        <Navbar />
 
         {/* Main Section Content */}
         <main className="flex-1 w-full px-6 sm:px-10 lg:px-14 py-7 sm:py-9">
@@ -258,11 +253,7 @@ export default function Home() {
               />
               <span>Get in Touch</span>
             </a>
-            <button
-              onClick={() => setIsAboutModalOpen(true)}
-              className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-semibold text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
-            >
-              {/* <DocumentIcon className="w-3.5 h-3.5 text-neutral-700 group-hover:text-neutral-900 transition" /> */}
+            <button className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-semibold text-neutral-900 hover:text-neutral-600 transition group cursor-pointer">
               <Image
                 src={"/images/resume.png"}
                 width={18}
@@ -279,10 +270,7 @@ export default function Home() {
               <h3 className="text-[18px] font-semibold text-neutral-900">
                 Design Explorations
               </h3>
-              <button
-                onClick={() => setSelectedProject(projects[0])}
-                className="text-[12px] text-[#5C5C5C] hover:text-neutral-900 border-b border-dotted underline-offset-4 transition cursor-pointer"
-              >
+              <button className="text-[12px] text-[#5C5C5C] hover:text-neutral-900 border-b border-dotted underline-offset-4 transition cursor-pointer">
                 View all Projects
               </button>
             </div>
@@ -292,7 +280,6 @@ export default function Home() {
               {projects.map((proj) => (
                 <div
                   key={proj.id}
-                  onClick={() => setSelectedProject(proj)}
                   className="group relative aspect-square rounded-xl overflow-hidden border border-neutral-200/70 bg-[#F9FAFB] hover:border-neutral-400 hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-center p-0.5"
                 >
                   <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-white">
@@ -315,32 +302,28 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </main>
 
-        {/* Footer */}
-        <footer className="border-t border-[#F5F5F5] px-6 sm:px-10 lg:px-14 py-5 mt-10">
-          <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-neutral-400">
-            <p>
-              © {new Date().getFullYear()} Oluwatobi Oluwafemi. All rights
-              reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <button
-                onClick={handleCopyEmail}
-                className="hover:text-neutral-700 transition cursor-pointer"
-              >
-                {copiedEmail ? "Copied to clipboard!" : "Copy Email"}
-              </button>
-              <span>•</span>
-              <a
-                href="mailto:oluwatobiomosewa@gmail.com"
-                className="hover:text-neutral-700 transition"
-              >
-                oluwatobiomosewa@gmail.com
-              </a>
-            </div>
-          </div>
-        </footer>
+          <Link
+            href="/projects"
+            className="flex space-x-2 rounded-md justify-between items-center border px-4 py-2 border-[#F7F7F7] bg-sidebar w-fit mt-5 cursor-pointer font-medium hover:bg-neutral-100 transition-colors"
+          >
+            <Image
+              src="/images/personal-folder.png"
+              alt=""
+              width={40}
+              height={40}
+              className="size-5"
+            />
+            <p>View all Projects</p>
+            <Image
+              src="/images/arrow-top-right.png"
+              alt="arrow"
+              width={40}
+              height={40}
+              className="size-5"
+            />
+          </Link>
+        </main>
       </div>
     </div>
   );

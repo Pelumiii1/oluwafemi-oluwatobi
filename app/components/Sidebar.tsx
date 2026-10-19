@@ -69,7 +69,7 @@ export function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="CV profile"
-              className="w-8 h-8 flex items-center justify-center text-neutral-800 shadow-2xs transition cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center text-neutral-800 hover:text-black transition-colors cursor-pointer"
             >
               <FourPointStarIcon className="size-5" />
             </a>
@@ -78,7 +78,7 @@ export function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Dribbble profile"
-              className="w-8 h-8 flex items-center justify-center text-neutral-800 shadow-2xs transition cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center text-neutral-800 hover:text-black transition-colors cursor-pointer"
             >
               <DribbbleIcon className="size-5" />
             </a>
@@ -87,7 +87,7 @@ export function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter) profile"
-              className="w-8 h-8 flex items-center justify-center text-neutral-800 shadow-2xs transition cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center text-neutral-800 hover:text-black transition-colors cursor-pointer"
             >
               <XTwitterIcon className="size-5" />
             </a>
@@ -96,7 +96,7 @@ export function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="w-8 h-8 flex items-center justify-center text-neutral-800 shadow-2xs transition cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center text-neutral-800 hover:text-black transition-colors cursor-pointer"
             >
               <LinkedInIcon className="size-5" />
             </a>
