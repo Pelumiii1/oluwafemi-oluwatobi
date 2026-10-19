@@ -2,12 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Oluwafemi | Product Designer — Portfolio Coming Soon",
+  title: "Hey, Femi's here! | Oluwatobi Oluwafemi — Product Designer",
   description:
-    "Oluwafemi Oluwatobi is a product designer. Portfolio is currently being designed — come back soon.",
+    "From idea to shipped, without the mess. Oluwafemi is a Product Designer combining research, systems thinking, and AI-powered workflows to design intelligent digital products.",
+  keywords: [
+    "Product Designer",
+    "UI/UX Designer",
+    "Design Systems",
+    "AI Products",
+    "Fintech",
+    "Oluwafemi",
+    "Oluwatobi Oluwafemi",
+  ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="antialiased">
       <head>
@@ -18,11 +31,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white">
+        {children}
+      </body>
     </html>
   );
 }
