@@ -86,7 +86,7 @@ export default function SwapXNextCaseStudy() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EDEDEB] text-neutral-900 selection:bg-neutral-900 selection:text-white font-sans relative">
+    <div className="min-h-screen bg-[#EDEDEB] text-neutral-900 selection:bg-neutral-900 selection:text-white font-rounded relative">
       {/* Right Floating Scroll Progress Indicator */}
       <aside
         aria-label="Page scroll progress"
@@ -644,7 +644,7 @@ export default function SwapXNextCaseStudy() {
       {/* BOTTOM CTA SECTION */}
       {/* ------------------------------------------------------------------ */}
       <section className="w-full bg-[#F8F8F8] border-t border-neutral-100">
-        <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-20">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-20">
           {/* Available Badge */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF7EE] text-[#299B75] border border-[#299B754D] text-[14px] font-medium tracking-wide">
             <span className="w-1.5 h-1.5 rounded-full bg-[#299B75]" />
@@ -728,7 +728,7 @@ export default function SwapXNextCaseStudy() {
       {/* FOOTER */}
       {/* ------------------------------------------------------------------ */}
       <footer className="w-full bg-white border-t border-neutral-100">
-        <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-20 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-neutral-400">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-neutral-400">
           <p className="order-2 sm:order-1 text-center sm:text-left">
             © oluwafemi, 2026.
           </p>

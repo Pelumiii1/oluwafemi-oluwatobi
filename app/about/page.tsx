@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -110,75 +110,8 @@ const PAST_EXPERIENCES: ExperienceItem[] = [
 ];
 
 export default function AboutPage() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
-
-  // Mouse drag-to-scroll state
-  const isMouseDownRef = useRef(false);
-  const startXRef = useRef(0);
-  const scrollLeftRef = useRef(0);
-  const hasDraggedRef = useRef(false);
-
-  // Check scroll position to update navigation indicators
-  const updateScrollState = useCallback(() => {
-    const el = sliderRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 10);
-    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 10);
-  }, []);
-
-  useEffect(() => {
-    const el = sliderRef.current;
-    if (!el) return;
-    updateScrollState();
-    el.addEventListener("scroll", updateScrollState, { passive: true });
-    window.addEventListener("resize", updateScrollState);
-    return () => {
-      el.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", updateScrollState);
-    };
-  }, [updateScrollState]);
-
-  // Scroll controls for slider
-  const handleScroll = (direction: "left" | "right") => {
-    const el = sliderRef.current;
-    if (!el) return;
-    const scrollAmount = el.clientWidth * 0.75;
-    el.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
-  };
-
-  // Drag-to-scroll handlers
-  const onMouseDown = (e: React.MouseEvent) => {
-    const el = sliderRef.current;
-    if (!el) return;
-    isMouseDownRef.current = true;
-    hasDraggedRef.current = false;
-    startXRef.current = e.pageX - el.offsetLeft;
-    scrollLeftRef.current = el.scrollLeft;
-  };
-
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isMouseDownRef.current) return;
-    const el = sliderRef.current;
-    if (!el) return;
-    e.preventDefault();
-    const x = e.pageX - el.offsetLeft;
-    const walk = (x - startXRef.current) * 1.4;
-    if (Math.abs(walk) > 5) {
-      hasDraggedRef.current = true;
-    }
-    el.scrollLeft = scrollLeftRef.current - walk;
-  };
-
-  const onMouseUpOrLeave = () => {
-    isMouseDownRef.current = false;
-  };
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -223,7 +156,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col justify-between">
+    <div className="min-h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col justify-between font-rounded">
       {/* Upper Page Section */}
       <div className="w-full">
         {/* Top Header & Back Button Container */}
@@ -258,29 +191,29 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h1 className="text-[14px] font-semibold text-neutral-900 leading-tight">
+              <h1 className="text-[14px] font-[500] text-[#222222] leading-tight">
                 Oluwatobi Oluwafemi
               </h1>
-              <p className="text-[12px] text-neutral-500 mt-0.5 font-normal">
+              <p className="text-[12px] text-[#5C5C5C] mt-0.5 font-normal">
                 oluwatobiomosewa@gmail.com
               </p>
             </div>
           </div>
 
           {/* Main Story Paragraphs */}
-          <div className="mt-9 sm:mt-11 max-w-[900px] space-y-4">
-            <p className="text-[16px] sm:text-[18px] text-neutral-900 font-normal leading-[1.5] tracking-[-0.01em]">
+          <div className="mt-9 sm:mt-6 font-rounded">
+            <p className="text-[16px] sm:text-[26px] text-black font-normal">
               A Product Designer with 4+ years of experience across product,
               web, and brand design. I enjoy turning complicated ideas into
               simple experiences, obsessing over the little details, and
               occasionally overthinking a 4px spacing decision.
             </p>
-            <p className="text-[16px] sm:text-[18px] text-neutral-900 font-normal leading-[1.5] tracking-[-0.01em]">
+            <p className="text-[16px] sm:text-[26px] text-black font-normal">
               Outside design, you’ll probably find me playing Fortnite, at the
               gym, on a long drive, running a 5K, watching anime, or laughing
               way louder than necessary.
             </p>
-            <p className="text-[16px] sm:text-[18px] text-neutral-900 font-normal leading-[1.5] tracking-[-0.01em]">
+            <p className="text-[16px] sm:text-[26px] text-black font-normal">
               My design philosophy is simple: clarity and intention. Make it
               easy to understand, make it worth remembering, and move quickly
               enough to keep up with the idea.
@@ -288,96 +221,67 @@ export default function AboutPage() {
           </div>
 
           {/* Subtext */}
-          <p className="text-[13px] text-neutral-500 mt-7 sm:mt-8 font-normal">
+          <p className="text-[18px] text-[#5C5C5C] mt-5 sm:mt-5 font-normal">
             Currently: Designing products, building things, and looking for
             interesting problems to solve.
           </p>
         </div>
 
-        {/* Horizontal Image Slider Section */}
-        <div className="relative w-full mt-2 sm:mt-4 pb-10 sm:pb-14 group/slider">
-          {/* Navigation Controls (Floating Buttons) */}
-          {canScrollLeft && (
-            <button
-              onClick={() => handleScroll("left")}
-              aria-label="Previous images"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-md border border-neutral-200/80 flex items-center justify-center text-neutral-800 hover:bg-white hover:scale-105 active:scale-95 transition cursor-pointer"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m15 18-6-6 6-6" />
-              </svg>
-            </button>
-          )}
+        {/* Horizontal Auto-Scrolling Marquee Section */}
+        <div className="relative w-full mt-2 sm:mt-4 pb-10 sm:pb-14 overflow-hidden group/marquee">
+          <div className="flex w-max select-none cursor-pointer">
+            {/* Primary Track */}
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 pr-1.5 sm:pr-2 animate-marquee">
+              {ABOUT_IMAGES.map((img, index) => (
+                <div
+                  key={`track1-${img.src}`}
+                  onClick={() => setLightboxIndex(index)}
+                  className="relative shrink-0 w-[175px] sm:w-[210px] md:w-[240px] lg:w-[270px] aspect-9/15 overflow-hidden bg-neutral-100 group/img rounded-xs cursor-pointer"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 640px) 175px, (max-width: 1024px) 240px, 270px"
+                    className="object-cover transition-transform duration-500 ease-out group-hover/img:scale-[1.03]"
+                    draggable={false}
+                    priority={index < 5}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors pointer-events-none" />
+                </div>
+              ))}
+            </div>
 
-          {canScrollRight && (
-            <button
-              onClick={() => handleScroll("right")}
-              aria-label="Next images"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-md border border-neutral-200/80 flex items-center justify-center text-neutral-800 hover:bg-white hover:scale-105 active:scale-95 transition cursor-pointer"
+            {/* Duplicate Track for Seamless Infinite Loop */}
+            <div
+              aria-hidden
+              className="flex shrink-0 items-center gap-1.5 sm:gap-2 pr-1.5 sm:pr-2 animate-marquee"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
-          )}
-
-          {/* Slider Scroll Track */}
-          <div
-            ref={sliderRef}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUpOrLeave}
-            onMouseLeave={onMouseUpOrLeave}
-            className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto select-none cursor-grab active:cursor-grabbing px-6 sm:px-12 lg:px-20 scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]"
-            style={{ WebkitOverflowScrolling: "touch" }}
-          >
-            {ABOUT_IMAGES.map((img, index) => (
-              <div
-                key={img.src}
-                onClick={() => {
-                  if (!hasDraggedRef.current) {
-                    setLightboxIndex(index);
-                  }
-                }}
-                className="relative shrink-0 w-[175px] sm:w-[210px] md:w-[240px] lg:w-[270px] aspect-[9/15] overflow-hidden bg-neutral-100 group/img rounded-xs cursor-pointer"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 640px) 175px, (max-width: 1024px) 240px, 270px"
-                  className="object-cover transition-transform duration-500 ease-out group-hover/img:scale-[1.03]"
-                  draggable={false}
-                  priority={index < 5}
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors pointer-events-none" />
-              </div>
-            ))}
+              {ABOUT_IMAGES.map((img, index) => (
+                <div
+                  key={`track2-${img.src}`}
+                  onClick={() => setLightboxIndex(index)}
+                  className="relative shrink-0 w-[175px] sm:w-[210px] md:w-[240px] lg:w-[270px] aspect-9/15 overflow-hidden bg-neutral-100 group/img rounded-xs cursor-pointer"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 640px) 175px, (max-width: 1024px) 240px, 270px"
+                    className="object-cover transition-transform duration-500 ease-out group-hover/img:scale-[1.03]"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors pointer-events-none" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Continuation Section Below The Images */}
         <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20 pt-6 sm:pt-10 pb-16 sm:pb-20">
           {/* Origin Story Paragraphs */}
-          <div className="max-w-[850px] space-y-3.5 text-[15px] sm:text-[16px] text-neutral-700 font-normal leading-[1.6]">
+          <div className="text-[15px] sm:text-[20px] text-[#5C5C5C] font-normal leading-[1.6]">
             <p>I didn&apos;t exactly plan on becoming a designer.</p>
             <p>
               I discovered design in 2021. What started as something to keep me
@@ -513,7 +417,7 @@ export default function AboutPage() {
           </div>
 
           {/* Past Experiences Section */}
-          <div className="mt-14 sm:mt-18 max-w-[850px]">
+          <div className="mt-14 sm:mt-18">
             <h2 className="text-[17px] sm:text-[19px] font-bold text-neutral-900 tracking-tight mb-6">
               Past Experiences
             </h2>
@@ -524,15 +428,15 @@ export default function AboutPage() {
                   className="flex items-baseline justify-between gap-3 text-[14px] sm:text-[15px]"
                 >
                   <div className="flex items-baseline gap-2.5 min-w-0 shrink-0">
-                    <span className="font-semibold text-neutral-900">
+                    <span className="font-normal text-[#232323] text-[20px]">
                       {exp.role}
                     </span>
-                    <span className="text-[12.5px] sm:text-[13px] text-neutral-400 font-normal">
+                    <span className="text-[12.5px] sm:text-[14px] text-[#475569] font-normal">
                       {exp.company}
                     </span>
                   </div>
                   <div className="flex-1 border-b border-dotted border-neutral-300/80 mx-2 self-center translate-y-0.5" />
-                  <span className="text-[12.5px] sm:text-[13px] text-neutral-600 font-normal shrink-0">
+                  <span className="text-[12.5px] sm:text-[15px] text-[#232323] font-[500] shrink-0">
                     {exp.period}
                   </span>
                 </div>

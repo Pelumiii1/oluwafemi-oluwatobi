@@ -50,6 +50,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/Instrument_Serif/InstrumentSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #111827;
@@ -62,6 +78,7 @@
   --font-serif: "Fraunces", Georgia, serif;
   --font-rounded: "SF Pro Rounded", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-instrument-serif: "Instrument Serif", Georgia, serif;
 }
 
 body {
@@ -72,6 +89,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a{
+a {
   text-decoration: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  will-change: transform;
+  animation: marquee 50s linear infinite;
+}
+
+.group\/marquee:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused;
+  }
 }

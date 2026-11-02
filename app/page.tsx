@@ -15,9 +15,9 @@ import { Navbar } from "./components/Navbar";
 interface Project {
   id: number;
   title: string;
-  category: string;
+  category?: string;
   image: string;
-  description: string;
+  description?: string;
   client?: string;
   tags?: string[];
 }
@@ -25,103 +25,153 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Modular Schedule & Calendar Workspace",
-    category: "SaaS Dashboard",
-    image: "/images/projects/project-1.png",
-    description:
-      "A cross-team calendar and meeting coordination system with live conflict detection, room resource booking, and custom tag categorization.",
-    client: "Productivity Suite",
-    tags: ["SaaS", "Design System", "Web App"],
+    title: "Meeting Sync",
+    image: "/images/design-exploration/meeting-sync.jpg",
   },
   {
     id: 2,
-    title: "Approval Workflow & Pipeline Portal",
-    category: "Enterprise SaaS",
-    image: "/images/projects/project-2.png",
-    description:
-      "A comprehensive review and document governance interface engineered for compliance verification and multi-department team handoffs.",
-    client: "Internal Ops",
-    tags: ["Enterprise", "Workflow", "Data Table"],
+    title: "Priorities",
+    image: "/images/design-exploration/priorities.jpg",
   },
   {
     id: 3,
-    title: "Community & Impact Intelligence Hub",
-    category: "Analytics Platform",
-    image: "/images/projects/project-3.png",
-    description:
-      "Telemetry dashboard tracking live environmental impact, community growth engagement, and KPI progress tracking with data visualization.",
-    client: "Impact Tech",
-    tags: ["Analytics", "Data Viz", "Dashboard"],
+    title: "Measures",
+    image: "/images/design-exploration/measures.jpg",
   },
   {
     id: 4,
-    title: "Crypto Asset & Real-Time Market App",
-    category: "Mobile Fintech",
-    image: "/images/projects/project-4.png",
-    description:
-      "iOS digital asset manager featuring real-time price tick feeds, 24-hour gain/loss charts, and biometric wallet security.",
-    client: "Web3 Finance",
-    tags: ["iOS", "Fintech", "Mobile App"],
+    title: "Market Sales",
+    image: "/images/design-exploration/market-sales.jpg",
   },
   {
     id: 5,
-    title: "Multi-Currency Wallet & Settlement Rail",
-    category: "Mobile Fintech",
-    image: "/images/projects/project-5.png",
-    description:
-      "Consumer wallet experience with instant Naira settlements, virtual cards, utility bill payments, and smart savings vaults.",
-    client: "Euphoria Pay",
-    tags: ["Mobile", "Banking", "Fintech"],
+    title: "Home Swap",
+    image: "/images/design-exploration/home-sw.png",
   },
   {
     id: 6,
-    title: "User Onboarding & Checkout Receipt Architecture",
-    category: "Mobile Experience",
-    image: "/images/projects/project-6.png",
-    description:
-      "Friction-free identity verification flow alongside an itemized checkout confirmation and transparent fee breakdown.",
-    client: "Commerce Core",
-    tags: ["UX Flow", "E-Commerce", "Mobile"],
+    title: "Sque",
+    image: "/images/design-exploration/home-sque.png",
   },
   {
     id: 7,
-    title: "Instant Crypto-to-Naira Liquidation App",
-    category: "Fintech Platform",
-    image: "/images/projects/project-7.png",
-    description:
-      "Mobile exchange allowing users to liquidate cryptocurrency directly to local bank accounts within seconds with zero hidden slippage.",
-    client: "SwapDirect",
-    tags: ["Fintech", "Mobile", "Crypto Ramp"],
+    title: "Mobile Swapnext",
+    image: "/images/design-exploration/home-mobile-swapnext.png",
   },
   {
     id: 8,
-    title: "Merchant Operations & Settlement Ledger",
-    category: "Admin Portal",
-    image: "/images/projects/project-8.png",
-    description:
-      "High-density transactional audit system for tracking customer disputes, payout schedules, and merchant fee reconciliations.",
-    client: "Fintech Ops",
-    tags: ["Admin Table", "SaaS", "Financial UI"],
+    title: "Gap Analysis",
+    image: "/images/design-exploration/gap-analysis.jpg",
   },
   {
     id: 9,
-    title: "Creative Agency & Strategic Design Showcase",
-    category: "Brand & Web",
-    image: "/images/projects/project-9.png",
-    description:
-      "Where strategy meets pixel-perfect execution: an editorial agency web experience highlighting high-tier brand identities and systems.",
-    client: "Design Studio",
-    tags: ["Branding", "Web Design", "Typography"],
+    title: "Feature Creep",
+    image: "/images/design-exploration/feature.jpg",
   },
   {
     id: 10,
-    title: "Instant Remittance & Tactile Keypad Flow",
-    category: "Mobile Banking",
-    image: "/images/projects/project-10.png",
-    description:
-      "Custom haptic keypad transfer screen tailored for high-speed cross-border payments with one-tap confirmation.",
-    client: "RemitEase",
-    tags: ["Mobile UI", "Payment", "Micro-interactions"],
+    title: "Enter Amount",
+    image: "/images/design-exploration/enter-amount.png",
+  },
+  {
+    id: 11,
+    title: "Delivery Progress",
+    image: "/images/design-exploration/delivery-progress.jpg",
+  },
+  {
+    id: 12,
+    title: "Choose US",
+    image: "/images/design-exploration/choose-us.png",
+  },
+  {
+    id: 14,
+    title: "Calendar",
+    image: "/images/design-exploration/calendar-grid-view.png",
+  },
+  {
+    id: 15,
+    title: "Assistant",
+    image: "/images/design-exploration/assistant.jpg",
+  },
+  {
+    id: 16,
+    title: "Add Roles",
+    image: "/images/design-exploration/add-role.jpg",
+  },
+  {
+    id: 17,
+    title: "Add Missions",
+    image: "/images/design-exploration/add-mission.jpg",
+  },
+  {
+    id: 18,
+    title: "Add Card",
+    image: "/images/design-exploration/add-card.png",
+  },
+  {
+    id: 19,
+    title: "Notifications",
+    image: "/images/design-exploration/notifications.jpg",
+  },
+  {
+    id: 20,
+    title: "New Pass",
+    image: "/images/design-exploration/new-pass.jpg",
+  },
+  {
+    id: 21,
+    title: "Give Recognition",
+    image: "/images/design-exploration/give-recognition.jpg",
+  },
+  {
+    id: 22,
+    title: "Details",
+    image: "/images/design-exploration/details.jpg",
+  },
+  {
+    id: 23,
+    title: "Recognition Update",
+    image: "/images/design-exploration/regonition-update.jpg",
+  },
+  {
+    id: 24,
+    title: "Home",
+    image: "/images/design-exploration/home.jpg",
+  },
+  {
+    id: 25,
+    title: "Update Profile",
+    image: "/images/design-exploration/update.jpg",
+  },
+  {
+    id: 26,
+    title: "Timetable",
+    image: "/images/design-exploration/timetable-excel.jpg",
+  },
+  {
+    id: 27,
+    title: "Swap coin",
+    image: "/images/design-exploration/swap-coin.jpg",
+  },
+  {
+    id: 28,
+    title: "Onboarding",
+    image: "/images/design-exploration/steps-swapnext.jpg",
+  },
+  {
+    id: 29,
+    title: "Review",
+    image: "/images/design-exploration/review.jpg",
+  },
+  {
+    id: 30,
+    title: "Assets",
+    image: "/images/design-exploration/assets.jpg",
+  },
+  {
+    id: 31,
+    title: "Pricing",
+    image: "/images/design-exploration/pricing.jpg",
   },
 ];
 
@@ -211,15 +261,15 @@ export default function Home() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-[22px] sm:text-[26px] md:text-[20px] font-normal text-neutral-900 tracking-tight mt-5 mb-3.5 leading-snug">
+          <h2 className="text-[22px] sm:text-[26px] md:text-[20px] font-normal text-black tracking-tight mt-5 mb-3.5 leading-snug font-rounded">
             From idea to shipped, without the mess.
           </h2>
 
           {/* Bio Paragraphs */}
-          <div className="space-y-3.5 text-[12px] sm:text-[13px] text-neutral-500 leading-relaxed max-w-4xl">
+          <div className="space-y-3 text-[12px] sm:text-[14px] text-black font-light font-rounded">
             <p>
-              I’m Oluwafemi, a{" "}
-              <strong className="font-semibold text-neutral-900">
+              I’m Oluwafemi, a
+              {"  "} <strong className="font-semibold text-neutral-900">
                 Product Designer
               </strong>{" "}
               who combines research, systems thinking, and AI-powered workflows
@@ -270,9 +320,9 @@ export default function Home() {
               <h3 className="text-[18px] font-semibold text-neutral-900">
                 Design Explorations
               </h3>
-              <button className="text-[12px] text-[#5C5C5C] hover:text-neutral-900 border-b border-dotted underline-offset-4 transition cursor-pointer">
+              <Link href={'/projects'} className="text-[12px] text-[#5C5C5C] hover:text-neutral-900 border-b border-dotted underline-offset-4 transition cursor-pointer">
                 View all Projects
-              </button>
+              </Link>
             </div>
 
             {/* 5-Column Project Grid filling remaining page width */}
@@ -285,7 +335,7 @@ export default function Home() {
                   <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-white">
                     <Image
                       src={proj.image}
-                      alt={proj.title}
+                      alt={proj.title || ""}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
@@ -293,11 +343,11 @@ export default function Home() {
                   </div>
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-neutral-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 pointer-events-none">
+                  {/* <div className="absolute inset-0 bg-neutral-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 pointer-events-none">
                     <span className="text-[10px] font-medium text-white bg-black/80 backdrop-blur-xs px-2 py-0.5 rounded-md truncate max-w-full">
-                      {proj.category}
+                      {proj.id}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>

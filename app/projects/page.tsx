@@ -26,11 +26,10 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: ["Web Applications"],
     image: "/images/project/lifevault.png",
     description:
-      "Designed LifeVault: a secure digital legacy platform that makes it effortless to organize life's most important assets. From financial and business records to digital documents and family legacies, everything finally has a trusted place.",
+      "Designed LifeVault: a secure digital legacy platform that makes it effortless to organize life’s most important assets. From financial and business records to digital documents and family legacies, everything finally has a trusted place.",
     liveUrl: null,
     caseStudyUrl: null,
   },
-
   {
     id: 4,
     title: "ExcelMind",
@@ -43,7 +42,6 @@ const ALL_PROJECTS: ProjectItem[] = [
     hasDownloads: true,
     caseStudyUrl: null,
   },
-
   {
     id: 7,
     title: "MotoBites",
@@ -51,13 +49,24 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: ["Mobile Applications"],
     image: "/images/project/motobites.png",
     description:
-      "Designed MotoBites' v1.0: a fast, affordable food delivery platform that makes getting your favorite meals feel effortless. Users can discover what they love, order in a few taps, and have hot, fresh meals delivered in minutes.",
-
+      "Designed MotoBites’ v1.0: a fast, affordable food delivery platform that makes getting your favorite meals feel effortless. Users can discover what they love, order in a few taps, and have hot, fresh meals delivered in minutes.",
     liveUrl: "https://motobites.app",
     hasDownloads: true,
     caseStudyUrl: null,
   },
 
+  {
+    id: 11,
+    title: "Naptones",
+    year: "2025",
+    category: ["Mobile Applications"],
+    image: "/images/project/naptones.png",
+    description:
+      "Designed Naptones: a calming sound therapy app that turns everyday noise into a personalized escape. Users can explore immersive soundscapes, mix different audio elements, and create custom sound themes tailored to help them relax, focus, or unwind.",
+    caseStudyUrl: null,
+    liveUrl: null,
+    hasDownloads: true,
+  },
   {
     id: 2,
     title: "SwapXNext",
@@ -66,7 +75,6 @@ const ALL_PROJECTS: ProjectItem[] = [
     image: "/images/project/swapxnext.png",
     description:
       "Designed SwapXnext: a simple crypto-to-naira platform that makes selling Bitcoin feel effortless. Users could swap BTC and receive Naira directly into their bank accounts, without the complexity of traditional crypto exchanges.",
-
     liveUrl: "https://swapxnext.com",
     caseStudyUrl: "/projects/swapxnext",
   },
@@ -77,11 +85,10 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: ["Mobile Applications"],
     image: "/images/project/squeakee.png",
     description:
-      "Designed Squeakee: a seamless cleaning service platform that makes booking a cleaner as easy as ordering a ride. Users select the spaces they need cleaned, provide the details, pay online, and have professional cleaners show up at their home, office, or wherever they need them.",
+      "Designed Squaekee: a seamless cleaning service platform that makes booking a cleaner as easy as ordering a ride. Users select the spaces they need cleaned, provide the details, pay online, and have professional cleaners show up at their home, office, or wherever they need them.",
     caseStudyUrl: null,
     liveUrl: null,
   },
-
   {
     id: 8,
     title: "Metal",
@@ -89,9 +96,20 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: ["Mobile Applications"],
     image: "/images/project/metal.png",
     description:
-      "Designed Metal: a modern fintech platform that brings everyday money management into one seamless experience. Users can track spending, manage multi-currency accounts, invest in diversified assets, and execute global transfers in seconds.",
+      "Designed Metal: a modern fintech platform that brings everyday money management into one seamless experience. Users can send and receive money, create virtual cards, track their spending, and save together through collaborative Money Pools, all designed to make managing money simpler, smarter, and more transparent.",
     caseStudyUrl: null,
     liveUrl: "https://metalfintech.com",
+  },
+  {
+    id: 12,
+    title: "CareerBuddy",
+    year: "2024",
+    category: ["Web Applications"],
+    image: "/images/project/careerBuddy.png",
+    description:
+      "Designed CareerBuddy’s v3: a talent platform that helps global companies discover and connect with Africa’s top professionals. Beyond listing jobs, the experience brings Africa’s talent story to life, making it easier for companies to find exceptional people ready to thrive on the global stage.",
+    liveUrl: "https://careerbuddyhq.com",
+    caseStudyUrl: null,
   },
   {
     id: 3,
@@ -100,7 +118,7 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: ["Web Applications"],
     image: "/images/project/missionsync.png",
     description:
-      "Designed MissionSync's v2.5: an organizational alignment platform that turns leadership decisions into coordinated action. Teams get the right decisions, context, and next steps exactly when they need them, closing the gap between strategy and execution.",
+      "Designed MissionSync’s v2.5: an organizational alignment platform that turns leadership decisions into coordinated action. Teams get the right decisions, context, and next steps exactly when they need them, closing the gap between strategy and execution.",
     liveUrl: null,
     caseStudyUrl: null,
   },
@@ -111,7 +129,7 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: ["Mobile Applications"],
     image: "/images/project/gated.png",
     description:
-      "Designed Gated: an estate pass app designed to simplify visitor management for residential communities. It lets visitors book gate passes before they arrive. Security teams can verify and approve access in advance, making entry faster, safer, and completely hassle-free.",
+      "Designed Gated: an estate pass app designed to simplify visitor management for residential communities. it lets visitors book gate passes before they arrive. Security teams can verify and approve access in advance, making entry faster, safer, and completely hassle-free.",
     liveUrl: "https://gatedpass.io",
     caseStudyUrl: null,
   },
@@ -128,48 +146,15 @@ const ALL_PROJECTS: ProjectItem[] = [
     caseStudyUrl: null,
   },
   {
-    id: 11,
-    title: "Naptones",
-    year: "2025",
-    category: ["Mobile Applications"],
-    image: "/images/project/naptones.png",
-    description:
-      "Designed Naptones: a calming sound therapy app that turns everyday noise into a personalized escape. Users can explore immersive soundscapes, mix different audio elements, and create custom sound themes tailored to help them relax, focus, or unwind.",
-    caseStudyUrl: null,
-    liveUrl: null,
-    hasDownloads: true,
-  },
-  {
-    id: 10,
-    title: "Awake Sounds",
-    year: "2025",
-    category: ["Mobile Applications"],
-    image: "/images/projects/project-10.png",
-    description:
-      "Designed Awake: a mindful sleep and ambient soundscapes companion app crafted to help modern professionals unwind, improve deep sleep cycles, and establish restorative morning routines.",
-    caseStudyUrl: null,
-    liveUrl: "https://awakesounds.app",
-  },
-  {
-    id: 12,
-    title: "Career Buddy",
-    year: "2024",
-    category: ["Web Applications"],
-    image: "/images/project/careerBuddy.png",
-    description:
-      "Designed CareerBuddy’s v3: a talent platform that helps global companies discover and connect with Africa’s top professionals. Beyond listing jobs, the experience brings Africa’s talent story to life, making it easier for companies to find exceptional people ready to thrive on the global stage.",
-    liveUrl: null,
-    caseStudyUrl: null,
-  },
-  {
     id: 13,
     title: "Whisperly",
-    year: "2024",
+    year: "2025",
     category: ["Mobile Applications"],
     image: "/images/project/whisperly.png",
     description:
       "Designed Whisperly: a privacy-first recovery app that makes deleted messages and media easier to retrieve. By monitoring notifications and securely storing content locally, users can recover texts, photos, videos, and audio without the frustration of losing them for good.",
     liveUrl: null,
+    hasDownloads: true,
     caseStudyUrl: null,
   },
 ];
@@ -218,12 +203,12 @@ export default function ProjectsPage() {
 
           {/* Large Editorial Headline */}
           <div className="mt-8 sm:mt-10">
-            <h1 className="font-serif text-[28px] sm:text-[36px] lg:text-[40px] font-normal text-black leading-[1.2] tracking-tight">
+            <h1 className="font-instrument-serif text-[28px] sm:text-[36px] lg:text-[40px] font-normal text-black">
               Every product starts as an idea, but not every idea becomes a
               product.
               <br className="hidden sm:inline" />{" "}
               <span>Through research, testing &amp; iteration,</span>{" "}
-              <span className="inline-block px-4 py-1 rounded-full bg-[#EAEAEA] text-neutral-900 font-serif text-[22px] sm:text-[30px] lg:text-[34px] align-middle mt-2 sm:mt-0 font-normal">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#E9E9E9] text-black font-instrument-serif text-[22px] sm:text-[30px] lg:text-[34px] align-middle mt-2 sm:mt-0 font-normal">
                 I help that idea find its form
               </span>
             </h1>
@@ -231,18 +216,17 @@ export default function ProjectsPage() {
 
           {/* Filter Tabs */}
           <div className="mt-8 flex items-center">
-            <div className="p-1 rounded-xl bg-[#F5F5F5] inline-flex items-center gap-1 flex-wrap">
+            <div className="p-1 rounded-xl bg-[#F8F8F8] inline-flex items-center gap-1 flex-wrap border-[#F2F1F1] border-[1.5px]">
               {FILTER_OPTIONS.map((filter) => {
                 const isActive = activeFilter === filter;
                 return (
                   <button
                     key={filter}
                     onClick={() => setActiveFilter(filter)}
-                    className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition cursor-pointer ${
-                      isActive
-                        ? "bg-white text-neutral-900 shadow-2xs font-semibold"
-                        : "text-neutral-500 hover:text-neutral-900"
-                    }`}
+                    className={`px-3.5 py-1.5 rounded-lg text-[13px]  transition cursor-pointer ${isActive
+                      ? "bg-white text-black shadow-2xs font-bold"
+                      : "text-[#5F5866] hover:text-neutral-900 font-medium"
+                      }`}
                   >
                     {filter}
                   </button>
@@ -253,7 +237,7 @@ export default function ProjectsPage() {
 
           {/* Announcement Banner */}
           {showBanner && (
-            <div className="mt-6 p-4 rounded-xl bg-[#FFF8EE] border-l-[3.5px] border-amber-500 flex items-start justify-between gap-4">
+            <div className="mt-6 p-4 bg-[#FBE4BB4D] border-l-2 border-[#DAC5A7] flex items-start justify-between gap-4">
               <div>
                 <p className="text-[13px] font-semibold text-neutral-900 leading-snug">
                   Portfolio &apos;26 is in progress, ~60% landed.
@@ -293,16 +277,16 @@ export default function ProjectsPage() {
 
                 {/* Title & Year Row */}
                 <div className="flex items-baseline justify-between mt-3.5">
-                  <h3 className="text-[15px] sm:text-[16px] font-bold text-neutral-900 group-hover:text-black">
+                  <h3 className="text-[15px] sm:text-[16px] font-bold text-neutral-900 group-hover:text-black font-rounded">
                     {project.title}
                   </h3>
-                  <span className="text-[12px] sm:text-[13px] text-neutral-400 font-normal">
+                  <span className="text-[12px] sm:text-[14px] text-[#AAAAAA] font-normal font-rounded">
                     {project.year}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-[11.5px] sm:text-[12px] text-neutral-500 leading-[1.6] mt-1.5 mb-2.5">
+                <p className="text-[11.5px] sm:text-[12px] font-rounded font-light text-[#6E6E6E] leading-[1.6] mt-1.5 mb-2.5">
                   {project.description}
                 </p>
 
