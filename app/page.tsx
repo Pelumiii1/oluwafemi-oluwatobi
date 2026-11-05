@@ -1,16 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ChatBubbleIcon,
-  MailIcon,
-  DocumentIcon,
-  CloseIcon,
-} from "./components/Icons";
-import { Sidebar } from "./components/Sidebar";
+import React, { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
+import { PageLoader } from "./components/PageLoader";
+import { Sidebar } from "./components/Sidebar";
 
 interface Project {
   id: number;
@@ -178,6 +173,7 @@ const projects: Project[] = [
 export default function Home() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [currentTime, setCurrentTime] = useState("9:45PM");
+  const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -208,173 +204,180 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-hidden">
-      {/* Left Sidebar: Fixed Width of 306px and fixed on screen */}
-      <Sidebar />
+    <>
+      <PageLoader onComplete={() => setIsRevealed(true)} />
+      <div
+        className={`h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-hidden transition-transform duration-700 ease-out ${
+          isRevealed ? "scale-100" : "scale-[0.99]"
+        }`}
+      >
+        {/* Left Sidebar: Fixed Width of 306px and fixed on screen */}
+        <Sidebar />
 
-      {/* Right Content Area: Independently scrollable, takes remaining width */}
-      <div className="flex-1 min-w-0 h-full overflow-y-auto flex flex-col justify-between">
-        {/* Top Header */}
-        <Navbar />
+        {/* Right Content Area: Independently scrollable, takes remaining width */}
+        <div className="flex-1 min-w-0 h-full overflow-y-auto flex flex-col justify-between">
+          {/* Top Header */}
+          <Navbar />
 
-        {/* Main Section Content */}
-        <main className="flex-1 w-full px-6 sm:px-10 lg:px-14 py-7 sm:py-9">
-          {/* Top Status Bar: Availability & Time */}
-          <div className="flex items-center justify-between pb-3.5">
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <span className="text-[11.5px] font-medium text-emerald-600 tracking-wide">
-                Available for work
-              </span>
+          {/* Main Section Content */}
+          <main className="flex-1 w-full px-6 sm:px-10 lg:px-14 py-7 sm:py-9">
+            {/* Top Status Bar: Availability & Time */}
+            <div className="flex items-center justify-between pb-3.5">
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1BA25C] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1BA25C]" />
+                </span>
+                <span className="text-[16px] font-medium text-[#1BA25C] tracking-wide font-rounded">
+                  Available for work
+                </span>
+              </div>
+              <div className="text-[14px] font-normal text-[#5C5C5C] tracking-wide font-rounded">
+                {currentTime}
+              </div>
             </div>
-            <div className="text-[11px] font-medium text-neutral-400 tracking-wide font-mono">
-              {currentTime}
-            </div>
-          </div>
 
-          {/* Profile Intro */}
-          <div className="mt-2.5 flex items-center gap-3">
-            <div className="size-13 rounded-xl overflow-hidden bg-neutral-100 shrink-0 border-[2.2px] border-neutral-200 shadow-2xs">
-              <Image
-                src="/images/femi.png"
-                alt="Oluwatobi Oluwafemi"
-                width={42}
-                height={42}
-                className="w-full h-full object-cover"
-                priority
-              />
+            {/* Profile Intro */}
+            <div className="mt-2.5 flex items-center gap-3">
+              <div className="size-13 rounded-xl overflow-hidden bg-neutral-100 shrink-0 border-[2.2px] border-neutral-200 shadow-2xs">
+                <Image
+                  src="/images/femi.png"
+                  alt="Oluwatobi Oluwafemi"
+                  width={42}
+                  height={42}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+              <div>
+                <h1 className="text-[14px] font-medium text-[#222222] leading-snug">
+                  Oluwatobi Oluwafemi
+                </h1>
+                <a
+                  href="mailto:oluwatobiomosewa@gmail.com"
+                  className="text-[12px] text-[#5C5C5C] hover:text-neutral-700 transition block leading-snug"
+                >
+                  oluwatobiomosewa@gmail.com
+                </a>
+              </div>
             </div>
-            <div>
-              <h1 className="text-[14px] font-medium text-[#222222] leading-snug">
-                Oluwatobi Oluwafemi
-              </h1>
+
+            {/* Headline */}
+            <h2 className="text-[22px] sm:text-[26px] md:text-[20px] font-normal text-black tracking-tight mt-5 mb-3.5 leading-snug font-rounded">
+              From idea to shipped, without the mess.
+            </h2>
+
+            {/* Bio Paragraphs */}
+            <div className="space-y-3 text-[12px] sm:text-[14px] text-black font-light font-rounded">
+              <p>
+                I’m Oluwafemi, a
+                {"  "} <strong className="font-semibold text-neutral-900">
+                  Product Designer
+                </strong>{" "}
+                who combines research, systems thinking, and AI-powered workflows
+                to design intelligent digital products that feel effortless to
+                use. I partner with founders and cross-functional teams to turn
+                complex ideas into intuitive experiences, rapidly prototype
+                solutions, and ship products that create real value for users.
+              </p>
+              <p>
+                My work spans AI products, SaaS, fintech, wellness, and
+                e-commerce, where I focus on designing human-centered experiences
+                that make AI useful, trustworthy, and scalable. Whether it’s
+                crafting AI interactions, building design systems, or accelerating
+                product development with AI and code, my goal is always the same:
+                create products that solve meaningful problems and drive lasting
+                impact.
+              </p>
+            </div>
+
+            {/* Action Links */}
+            <div className="flex items-center gap-6 mt-4 mb-9">
               <a
                 href="mailto:oluwatobiomosewa@gmail.com"
-                className="text-[12px] text-[#5C5C5C] hover:text-neutral-700 transition block leading-snug"
+                className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
               >
-                oluwatobiomosewa@gmail.com
+                <Image
+                  src={"/images/mail.png"}
+                  width={18}
+                  height={18}
+                  alt="My Resume"
+                />
+                <span>Get in Touch</span>
               </a>
-            </div>
-          </div>
-
-          {/* Headline */}
-          <h2 className="text-[22px] sm:text-[26px] md:text-[20px] font-normal text-black tracking-tight mt-5 mb-3.5 leading-snug font-rounded">
-            From idea to shipped, without the mess.
-          </h2>
-
-          {/* Bio Paragraphs */}
-          <div className="space-y-3 text-[12px] sm:text-[14px] text-black font-light font-rounded">
-            <p>
-              I’m Oluwafemi, a
-              {"  "} <strong className="font-semibold text-neutral-900">
-                Product Designer
-              </strong>{" "}
-              who combines research, systems thinking, and AI-powered workflows
-              to design intelligent digital products that feel effortless to
-              use. I partner with founders and cross-functional teams to turn
-              complex ideas into intuitive experiences, rapidly prototype
-              solutions, and ship products that create real value for users.
-            </p>
-            <p>
-              My work spans AI products, SaaS, fintech, wellness, and
-              e-commerce, where I focus on designing human-centered experiences
-              that make AI useful, trustworthy, and scalable. Whether it’s
-              crafting AI interactions, building design systems, or accelerating
-              product development with AI and code, my goal is always the same:
-              create products that solve meaningful problems and drive lasting
-              impact.
-            </p>
-          </div>
-
-          {/* Action Links */}
-          <div className="flex items-center gap-6 mt-4 mb-9">
-            <a
-              href="mailto:oluwatobiomosewa@gmail.com"
-              className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-semibold text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
-            >
-              <Image
-                src={"/images/mail.png"}
-                width={18}
-                height={18}
-                alt="My Resume"
-              />
-              <span>Get in Touch</span>
-            </a>
-            <button className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-semibold text-neutral-900 hover:text-neutral-600 transition group cursor-pointer">
-              <Image
-                src={"/images/resume.png"}
-                width={18}
-                height={18}
-                alt="My Resume"
-              />
-              <span>My Resume</span>
-            </button>
-          </div>
-
-          {/* Design Explorations Section */}
-          <div className="pt-2">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[18px] font-semibold text-neutral-900">
-                Design Explorations
-              </h3>
-              <Link href={'/projects'} className="text-[12px] text-[#5C5C5C] hover:text-neutral-900 border-b border-dotted underline-offset-4 transition cursor-pointer">
-                View all Projects
-              </Link>
+              <button className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer">
+                <Image
+                  src={"/images/resume.png"}
+                  width={18}
+                  height={18}
+                  alt="My Resume"
+                />
+                <span>My Resume</span>
+              </button>
             </div>
 
-            {/* 5-Column Project Grid filling remaining page width */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-3.5">
-              {projects.map((proj) => (
-                <div
-                  key={proj.id}
-                  className="group relative aspect-square rounded-xl overflow-hidden border border-neutral-200/70 bg-[#F9FAFB] hover:border-neutral-400 hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-center p-0.5"
-                >
-                  <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-white">
-                    <Image
-                      src={proj.image}
-                      alt={proj.title || ""}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                    />
-                  </div>
+            {/* Design Explorations Section */}
+            <div className="pt-2">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-[18px] font-semibold text-black font-ui-display">
+                  Design Explorations
+                </h3>
+                <Link href={'/projects'} className="text-[12px] text-[#5C5C5C] hover:text-neutral-900 border-b border-dotted underline-offset-4 transition cursor-pointer">
+                  View all Projects
+                </Link>
+              </div>
 
-                  {/* Hover Overlay */}
-                  {/* <div className="absolute inset-0 bg-neutral-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 pointer-events-none">
+              {/* 5-Column Project Grid filling remaining page width */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-3.5">
+                {projects.map((proj) => (
+                  <div
+                    key={proj.id}
+                    className="group relative aspect-square rounded-xl overflow-hidden border border-neutral-200/70 bg-[#F9FAFB]  transition-all duration-200 flex items-center justify-center p-0.5"
+                  >
+                    <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-white">
+                      <Image
+                        src={proj.image}
+                        alt={proj.title || ""}
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Hover Overlay */}
+                    {/* <div className="absolute inset-0 bg-neutral-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 pointer-events-none">
                     <span className="text-[10px] font-medium text-white bg-black/80 backdrop-blur-xs px-2 py-0.5 rounded-md truncate max-w-full">
                       {proj.id}
                     </span>
                   </div> */}
-                </div>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <Link
-            href="/projects"
-            className="flex space-x-2 rounded-md justify-between items-center border px-4 py-2 border-[#F7F7F7] bg-sidebar w-fit mt-5 cursor-pointer font-medium hover:bg-neutral-100 transition-colors"
-          >
-            <Image
-              src="/images/personal-folder.png"
-              alt=""
-              width={40}
-              height={40}
-              className="size-5"
-            />
-            <p>View all Projects</p>
-            <Image
-              src="/images/arrow-top-right.png"
-              alt="arrow"
-              width={40}
-              height={40}
-              className="size-5"
-            />
-          </Link>
-        </main>
+            <Link
+              href="/projects"
+              className="flex space-x-2 rounded-md justify-between items-center border px-4 py-2 border-[#F7F7F7] bg-sidebar w-fit mt-5 cursor-pointer font-medium hover:bg-neutral-100 transition-colors"
+            >
+              <Image
+                src="/images/personal-folder.png"
+                alt=""
+                width={40}
+                height={40}
+                className="size-5"
+              />
+              <p>View all Projects</p>
+              <Image
+                src="/images/arrow-top-right.png"
+                alt="arrow"
+                width={40}
+                height={40}
+                className="size-5"
+              />
+            </Link>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

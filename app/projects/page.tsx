@@ -297,7 +297,7 @@ export default function ProjectsPage() {
                 >
                   <>
                     {!project.caseStudyUrl ? (
-                      <div className="inline-flex items-center gap-1.5 text-neutral-400 select-none">
+                      <div className="inline-flex items-center gap-1.5 text-[#646464] select-none font-rounded">
                         <svg
                           width="11"
                           height="11"
@@ -312,7 +312,7 @@ export default function ProjectsPage() {
                     ) : (
                       <Link
                         href={project.caseStudyUrl}
-                        className="inline-flex items-center gap-1 text-neutral-700 hover:text-black font-medium transition cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[#646464] hover:text-black font-medium transition cursor-pointer font-rounded"
                       >
                         <span>Read Case Study</span>
                         <span className="text-[13px]">→</span>
@@ -330,7 +330,7 @@ export default function ProjectsPage() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-neutral-700 hover:text-black font-medium transition cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[#464646] hover:text-black font-medium transition cursor-pointer font-rounded"
                       >
                         <span>View Live Site</span>
                         <span className="text-[12px]">↗</span>
@@ -344,7 +344,7 @@ export default function ProjectsPage() {
                       <span className="text-neutral-300 mx-2 select-none">
                         |
                       </span>
-                      <div className="inline-flex items-center gap-1 text-neutral-700 font-medium">
+                      <div className="inline-flex items-center gap-0.5 text-[#464646] font-medium font-rounded">
                         <span>Download</span>
                         {/* Apple Icon */}
                         <svg

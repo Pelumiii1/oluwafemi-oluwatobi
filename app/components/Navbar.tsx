@@ -17,7 +17,7 @@ export function Navbar({
   activePage = "home",
 }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[#F0F0F0]">
+    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[#F0F0F0] font-rounded">
       <div className="w-full px-6 sm:px-10 lg:px-14 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         {/* Header Greeting & Subtitle */}
         <div className="flex-1">
@@ -51,7 +51,7 @@ export function Navbar({
         <div className="flex items-center gap-2.5 shrink-0 self-end sm:self-auto">
           <button
             onClick={onBookCall}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-neutral-200/90 bg-white hover:bg-neutral-50 active:scale-[0.98] transition-all text-[11.5px] sm:text-[12px] text-[#5C5C5C] font-medium shadow-2xs cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#F2F1F1] bg-white hover:bg-neutral-50 active:scale-[0.98] transition-all text-[11.5px] sm:text-[12px] text-[#5C5C5C] font-medium shadow-2xs cursor-pointer"
           >
             <span>Book 15 Minutes call</span>
             <ChatBubbleIcon className="w-3.5 h-3.5 text-neutral-600" />

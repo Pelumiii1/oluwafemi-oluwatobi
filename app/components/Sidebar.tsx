@@ -27,13 +27,13 @@ export function Sidebar() {
 
         {/* Testimonials Section */}
         <div className="mt-2 md:mt-4">
-          <h3 className="font-serif text-[20px] text-neutral-900 tracking-tight mb-3">
+          <h3 className="text-[20px] text-black tracking-tight mb-3 font-instrument-serif">
             Testimonials
           </h3>
 
           {/* Testimonial Card with Dashed Border */}
           <div className="rounded-xl border border-dashed border-neutral-300/80 bg-white/70 p-4 shadow-2xs text-left backdrop-blur-xs">
-            <p className="text-[13px] leading-relaxed text-neutral-700 font-normal">
+            <p className="text-[13px] leading-relaxed text-black font-normal font-rounded">
               I recommend Femi for his significant impact as a product designer
               for any early stage startup or fast paced compnay....
             </p>
@@ -49,10 +49,10 @@ export function Sidebar() {
                 />
               </div>
               <div className="min-w-0">
-                <p className="text-[12px] font-semibold text-neutral-900 leading-tight">
+                <p className="text-[12px] font-semibold text-black leading-tight font-sf-pro-display">
                   Arora Akshay
                 </p>
-                <p className="text-[12px] text-[#08080899] leading-tight truncate">
+                <p className="text-[12px] text-[#08080899] leading-tight truncate font-sf-pro-display">
                   Founder at Euphoria
                 </p>
               </div>
