@@ -200,15 +200,15 @@ export default function SwapXNextCaseStudy() {
             {/* Overview Hero Mockup Banner */}
             <div
               onClick={() => setLightboxImage("/projects/swapxnext/img1.png")}
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
             >
               <Image
                 src="/projects/swapxnext/img1.png"
                 alt="SwapXNext app held in hand preview"
-                width={700}
-                height={700}
+                width={1200}
+                height={900}
                 priority
-                className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </div>
@@ -289,15 +289,15 @@ export default function SwapXNextCaseStudy() {
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img2.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img2.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </div>
@@ -317,57 +317,57 @@ export default function SwapXNextCaseStudy() {
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img3.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img3.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img4.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-4 sm:mt-8 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img4.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img5.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-4 sm:mt-8 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img5.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img6.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-4 sm:mt-8 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img6.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </div>
@@ -394,29 +394,29 @@ export default function SwapXNextCaseStudy() {
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img7.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img7.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img8.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-4 sm:mt-8 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img8.png"
                   alt="SwapXNext app held in hand preview"
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
@@ -441,15 +441,15 @@ export default function SwapXNextCaseStudy() {
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img9.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img9.png"
                   alt=""
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </div>
@@ -471,15 +471,15 @@ export default function SwapXNextCaseStudy() {
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img10.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img10.png"
                   alt=""
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </div>
@@ -517,44 +517,44 @@ export default function SwapXNextCaseStudy() {
 
               <div
                 onClick={() => setLightboxImage("/projects/swapxnext/img11.png")}
-                className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+                className="mt-6 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
               >
                 <Image
                   src="/projects/swapxnext/img11.png"
                   alt=""
-                  width={700}
-                  height={700}
+                  width={1109}
+                  height={733}
                   priority
-                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </div>
 
             <div
               onClick={() => setLightboxImage("/projects/swapxnext/img12.png")}
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              className="mt-4 sm:mt-8 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
             >
               <Image
                 src="/projects/swapxnext/img12.png"
                 alt=""
-                width={700}
-                height={700}
+                width={1109}
+                height={733}
                 priority
-                className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
 
             <div
               onClick={() => setLightboxImage("/projects/swapxnext/img13.png")}
-              className="mt-8 sm:mt-10 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
+              className="mt-4 sm:mt-8 w-full rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center cursor-zoom-in transition-all duration-300 group"
             >
               <Image
                 src="/projects/swapxnext/img13.png"
                 alt=""
-                width={700}
-                height={700}
+                width={1109}
+                height={733}
                 priority
-                className="object-contain group-hover:scale-[1.02] transition-transform duration-500 w-277.25 h-183.25"
+                className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
 

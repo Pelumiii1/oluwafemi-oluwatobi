@@ -307,7 +307,12 @@ export default function Home() {
                   Get in Touch
                 </span>
               </a>
-              <button className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer">
+              <a
+                href="https://go.fliplink.me/view/D4564A81-CDF4-47F7-BA49-10B47A907B5B?utm_campaign=Drip+101&utm_content=notifications&utm_medium=MyLeadFox&utm_source=Drip&utm_term=SaaS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
+              >
                 <Image
                   src={"/images/resume.png"}
                   width={18}
@@ -317,7 +322,7 @@ export default function Home() {
                 <span className="border-b border-dotted border-neutral-700/80 pb-0.5 md:border-b-0 md:pb-0">
                   My Resume
                 </span>
-              </button>
+              </a>
 
               {/* Book a Call - Only for Mobile */}
               <a
