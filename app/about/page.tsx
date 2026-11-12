@@ -9,6 +9,7 @@ import {
   XTwitterIcon,
   LinkedInIcon,
 } from "../components/Icons";
+import { MobileNav } from "../components/MobileNav";
 
 interface SliderImage {
   src: string;
@@ -573,7 +574,7 @@ export default function AboutPage() {
       </section>
 
       {/* Bottom Footer Section */}
-      <footer className="w-full bg-white border-t border-neutral-100">
+      <footer className="w-full bg-white border-t border-neutral-100 pb-28 sm:pb-0">
         <div className="w-full max-w-350 mx-auto px-6 sm:px-12 lg:px-20 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-neutral-400">
           {/* Left copyright */}
           <p className="order-2 sm:order-1 text-center sm:text-left">
@@ -705,6 +706,7 @@ export default function AboutPage() {
           </div>
         </div>
       )}
+      <MobileNav />
     </div>
   );
 }

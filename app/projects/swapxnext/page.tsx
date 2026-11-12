@@ -727,7 +727,7 @@ export default function SwapXNextCaseStudy() {
       {/* ------------------------------------------------------------------ */}
       {/* FOOTER */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="w-full bg-white border-t border-neutral-100">
+      <footer className="w-full bg-white border-t border-neutral-100 pb-28 sm:pb-0">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-neutral-400">
           <p className="order-2 sm:order-1 text-center sm:text-left">
             © oluwafemi, 2026.

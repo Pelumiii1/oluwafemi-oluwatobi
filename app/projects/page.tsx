@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sidebar } from "../components/Sidebar";
+import { MobileNav } from "../components/MobileNav";
 
 interface ProjectItem {
   id: number;
@@ -177,13 +178,14 @@ export default function ProjectsPage() {
       : ALL_PROJECTS.filter((p) => p.category.includes(activeFilter));
 
   return (
-    <div className="h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-hidden">
-      {/* Left Sidebar: Fixed Width of 306px */}
-      <Sidebar />
+    <>
+      <div className="min-h-screen md:h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-x-hidden md:overflow-hidden">
+        {/* Left Sidebar: Fixed Width of 306px */}
+        <Sidebar />
 
-      {/* Right Content Area: Independently scrollable */}
-      <div className="flex-1 min-w-0 h-full overflow-y-auto flex flex-col justify-between">
-        <main className="w-full px-6 sm:px-10 lg:px-14 py-8 sm:py-10">
+        {/* Right Content Area: Independently scrollable */}
+        <div className="flex-1 min-w-0 md:h-full md:overflow-y-auto flex flex-col justify-between order-1 md:order-2">
+        <main className="w-full px-6 sm:px-10 lg:px-14 py-8 sm:py-10 pb-32 sm:pb-10">
           {/* Back Navigation Link */}
           <Link
             href="/"
@@ -215,15 +217,15 @@ export default function ProjectsPage() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="mt-8 flex items-center">
-            <div className="p-1 rounded-xl bg-[#F8F8F8] inline-flex items-center gap-1 flex-wrap border-[#F2F1F1] border-[1.5px]">
+          <div className="mt-8 flex items-center max-w-full overflow-x-auto no-scrollbar py-0.5">
+            <div className="p-1 rounded-xl bg-[#F8F8F8] inline-flex items-center gap-1 flex-nowrap shrink-0 border-[#F2F1F1] border-[1.5px]">
               {FILTER_OPTIONS.map((filter) => {
                 const isActive = activeFilter === filter;
                 return (
                   <button
                     key={filter}
                     onClick={() => setActiveFilter(filter)}
-                    className={`px-3.5 py-1.5 rounded-lg text-[13px]  transition cursor-pointer ${isActive
+                    className={`px-3.5 py-1.5 rounded-lg text-[13px] whitespace-nowrap transition cursor-pointer shrink-0 ${isActive
                       ? "bg-white text-black shadow-2xs font-bold"
                       : "text-[#5F5866] hover:text-neutral-900 font-medium"
                       }`}
@@ -373,5 +375,7 @@ export default function ProjectsPage() {
         </main>
       </div>
     </div>
+    <MobileNav />
+    </>
   );
 }

@@ -3,11 +3,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
+let hasPlayedInitialLoader = false;
+
+export function hasLoaderPlayed(): boolean {
+  return hasPlayedInitialLoader;
+}
+
 interface PageLoaderProps {
   onComplete?: () => void;
 }
 
 export function PageLoader({ onComplete }: PageLoaderProps) {
+  const [alreadyPlayed] = useState(() => hasPlayedInitialLoader);
   const [progress, setProgress] = useState(0);
   const [foldProgress, setFoldProgress] = useState<number | null>(null);
   const [isDone, setIsDone] = useState(false);
@@ -16,6 +23,8 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
 
   // Phase 1: Writing and Progress Counter (0% to 100%)
   useEffect(() => {
+    if (alreadyPlayed) return;
+
     const totalDuration = 2200;
     let animationFrameId: number;
 
@@ -44,11 +53,11 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [alreadyPlayed]);
 
   // Phase 2: Diagonal Page Fold from bottom-right corner to top-left corner
   useEffect(() => {
-    if (foldProgress === null) return;
+    if (alreadyPlayed || foldProgress === null) return;
 
     // Total fold animation duration ~1100ms
     const foldDuration = 1100;
@@ -68,6 +77,7 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
       if (t < 1) {
         animationFrameId = requestAnimationFrame(animateFold);
       } else {
+        hasPlayedInitialLoader = true;
         onComplete?.();
         // Unmount loader completely after fold clears
         setTimeout(() => {
@@ -81,9 +91,9 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, [foldProgress, onComplete]);
+  }, [alreadyPlayed, foldProgress, onComplete]);
 
-  if (isDone) return null;
+  if (alreadyPlayed || isDone) return null;
 
   // Name writing progress: begins at 10% progress and finishes at 92% progress
   const writeProgress = Math.min(

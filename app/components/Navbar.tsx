@@ -17,7 +17,7 @@ export function Navbar({
   activePage = "home",
 }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[#F0F0F0] font-rounded">
+    <header className="hidden md:block sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[#F0F0F0] font-rounded">
       <div className="w-full px-6 sm:px-10 lg:px-14 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         {/* Header Greeting & Subtitle */}
         <div className="flex-1">

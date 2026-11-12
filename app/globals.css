@@ -274,8 +274,26 @@ a {
   animation-play-state: paused;
 }
 
+@keyframes testimonial-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation-play-state: paused;
   }
+}
+
+/* Hide scrollbar while preserving smooth scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

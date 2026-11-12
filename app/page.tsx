@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
-import { PageLoader } from "./components/PageLoader";
+import { PageLoader, hasLoaderPlayed } from "./components/PageLoader";
 import { Sidebar } from "./components/Sidebar";
+import { MobileNav } from "./components/MobileNav";
 
 interface Project {
   id: number;
@@ -173,7 +174,7 @@ const projects: Project[] = [
 export default function Home() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [currentTime, setCurrentTime] = useState("9:45PM");
-  const [isRevealed, setIsRevealed] = useState(false);
+  const [isRevealed, setIsRevealed] = useState(() => hasLoaderPlayed());
 
   useEffect(() => {
     const updateTime = () => {
@@ -207,15 +208,15 @@ export default function Home() {
     <>
       <PageLoader onComplete={() => setIsRevealed(true)} />
       <div
-        className={`h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-hidden transition-transform duration-700 ease-out ${
+        className={`min-h-screen md:h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-x-hidden md:overflow-hidden transition-transform duration-700 ease-out ${
           isRevealed ? "scale-100" : "scale-[0.99]"
         }`}
       >
         {/* Left Sidebar: Fixed Width of 306px and fixed on screen */}
         <Sidebar />
 
-        {/* Right Content Area: Independently scrollable, takes remaining width */}
-        <div className="flex-1 min-w-0 h-full overflow-y-auto flex flex-col justify-between">
+        {/* Right Content Area: Independently scrollable on desktop, main flow on mobile */}
+        <div className="flex-1 min-w-0 md:h-full md:overflow-y-auto flex flex-col justify-between order-1 md:order-2">
           {/* Top Header */}
           <Navbar />
 
@@ -292,7 +293,7 @@ export default function Home() {
             </div>
 
             {/* Action Links */}
-            <div className="flex items-center gap-6 mt-4 mb-9">
+            <div className="flex items-center gap-5 sm:gap-6 mt-4 mb-9">
               <a
                 href="mailto:oluwatobiomosewa@gmail.com"
                 className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
@@ -301,19 +302,46 @@ export default function Home() {
                   src={"/images/mail.png"}
                   width={18}
                   height={18}
-                  alt="My Resume"
+                  alt="Mail"
                 />
-                <span>Get in Touch</span>
+                <span className="border-b border-dotted border-neutral-700/80 pb-0.5 md:border-b-0 md:pb-0">
+                  Get in Touch
+                </span>
               </a>
               <button className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer">
                 <Image
                   src={"/images/resume.png"}
                   width={18}
                   height={18}
-                  alt="My Resume"
+                  alt="Resume"
                 />
-                <span>My Resume</span>
+                <span className="border-b border-dotted border-neutral-700/80 pb-0.5 md:border-b-0 md:pb-0">
+                  My Resume
+                </span>
               </button>
+
+              {/* Book a Call - Only for Mobile */}
+              <a
+                href="mailto:oluwatobiomosewa@gmail.com?subject=Book%20a%20Call"
+                className="inline-flex md:hidden items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-[18px] h-[18px] shrink-0 text-neutral-900"
+                >
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+                <span className="border-b border-dotted border-neutral-700/80 pb-0.5">
+                  Book a Call
+                </span>
+              </a>
             </div>
 
             {/* Design Explorations Section */}
@@ -357,7 +385,7 @@ export default function Home() {
 
             <Link
               href="/projects"
-              className="flex space-x-2 rounded-md justify-between items-center border px-4 py-2 border-[#F7F7F7] bg-sidebar w-fit mt-5 cursor-pointer font-medium hover:bg-neutral-100 transition-colors"
+              className="flex space-x-2 rounded-md justify-between items-center border px-4 py-2 border-[#F7F7F7] bg-[#FCFCFC] w-fit mt-5 cursor-pointer font-medium hover:bg-neutral-100 transition-colors font-rounded text-[14px] rounded-[6px]"
             >
               <Image
                 src="/images/personal-folder.png"
@@ -378,6 +406,8 @@ export default function Home() {
           </main>
         </div>
       </div>
+      {/* Mobile Fixed Floating Navigation Dock */}
+      <MobileNav />
     </>
   );
 }
