@@ -49,13 +49,15 @@ export function Navbar({
 
         {/* Header Action Buttons */}
         <div className="flex items-center gap-2.5 shrink-0 self-end sm:self-auto">
-          <button
-            onClick={onBookCall}
+          <a
+            href="https://calendly.com/oluwatobioluwafemi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#F2F1F1] bg-white hover:bg-neutral-50 active:scale-[0.98] transition-all text-[11.5px] sm:text-[12px] text-[#5C5C5C] font-medium shadow-2xs cursor-pointer"
           >
             <span>Book 15 Minutes call</span>
             <ChatBubbleIcon className="w-3.5 h-3.5 text-neutral-600" />
-          </button>
+          </a>
 
           {activePage === "about" ? (
             <Link

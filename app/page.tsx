@@ -322,7 +322,9 @@ export default function Home() {
 
               {/* Book a Call - Only for Mobile */}
               <a
-                href="mailto:oluwatobiomosewa@gmail.com?subject=Book%20a%20Call"
+                href="https://calendly.com/oluwatobioluwafemi"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex md:hidden items-center gap-1.5 text-[12px] sm:text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition group cursor-pointer"
               >
                 <svg
