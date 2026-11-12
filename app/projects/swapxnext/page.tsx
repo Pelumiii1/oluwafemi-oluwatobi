@@ -6,6 +6,7 @@ import Link from "next/link";
 import backicon from '../../../public/icons/back.png'
 import bag from "../../../public/icons/bag.png"
 import calendar from "../../../public/icons/calendar.png"
+import { MobileNav } from "../../components/MobileNav";
 
 interface SectionItem {
   id: string;
@@ -143,7 +144,7 @@ export default function SwapXNextCaseStudy() {
 
         {/* Project Header Title & Metadata */}
         <div className="pb-10 sm:pb-12">
-          <h1 className="text-[38px] sm:text-[48px] md:text-[56px] font-bold text-neutral-950 tracking-tight leading-tight font-rounded">
+          <h1 className="text-[28px] sm:text-[48px] md:text-[56px] font-bold text-neutral-950 tracking-tight leading-tight font-rounded">
             SwapXNext
           </h1>
 
@@ -183,7 +184,7 @@ export default function SwapXNextCaseStudy() {
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+            <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
               Making Crypto-to-Naira Conversion Feel Effortless
             </h2>
 
@@ -233,7 +234,7 @@ export default function SwapXNextCaseStudy() {
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+            <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
               Selling Crypto Was More Complicated Than It Needed to Be
             </h2>
 
@@ -270,7 +271,7 @@ export default function SwapXNextCaseStudy() {
           {/* Right Column Content */}
           <div className="lg:col-span-9 space-y-12 sm:space-y-16">
             <div>
-              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+              <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
                 Designing a Simpler Way to Convert Crypto
               </h2>
 
@@ -305,11 +306,11 @@ export default function SwapXNextCaseStudy() {
             <div className="border-t border-dashed border-neutral-300 w-full" />
 
             <div>
-              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+              <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
                 User Onboarding & KYC
               </h2>
 
-              <h3 className="text-black text-[20px] font-[500] mt-4">Building Trust Before the First Transaction</h3>
+              <h3 className="text-black text-[15px] sm:text-[20px] font-medium mt-2 sm:mt-4">Building Trust Before the First Transaction</h3>
 
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 Because users are dealing with financial assets, verification needed to be simple without compromising the trust and security expected from a financial product. We designed a guided KYC experience that walks users through the required verification steps with clear instructions and feedback at each stage. The flow keeps users informed about their progress and makes it clear what information is required before they can start converting their assets. The goal was to make compliance feel like a natural part of onboarding rather than a frustrating barrier.
@@ -375,11 +376,11 @@ export default function SwapXNextCaseStudy() {
             <div className="border-t border-dashed border-neutral-300 w-full" />
 
             <div>
-              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+              <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
                 Convert Assets
               </h2>
 
-              <h3 className="text-black text-[20px] font-[500] mt-4">Turning Bitcoin Into Naira in Just a Few Steps</h3>
+              <h3 className="text-black text-[15px] sm:text-[20px] font-medium mt-2 sm:mt-4">Turning Bitcoin Into Naira in Just a Few Steps</h3>
 
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 The conversion experience is at the heart of SwapXnext.
@@ -427,11 +428,11 @@ export default function SwapXNextCaseStudy() {
             <div className="border-t border-dashed border-neutral-300 w-full" />
 
             <div>
-              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+              <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
                 Favorite Coins & Notifications
               </h2>
 
-              <h3 className="text-black text-[20px] font-[500] mt-4">Staying Updated Without Constantly Checking the App</h3>
+              <h3 className="text-black text-[15px] sm:text-[20px] font-medium mt-2 sm:mt-4">Staying Updated Without Constantly Checking the App</h3>
 
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 Not every user wants to sell immediately. We introduced a favorite coin experience that allows users to keep track of the assets they're most interested in and receive notifications when there are relevant rate movements
@@ -457,11 +458,11 @@ export default function SwapXNextCaseStudy() {
             <div className="border-t border-dashed border-neutral-300 w-full" />
 
             <div>
-              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+              <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
                 Transaction History
               </h2>
 
-              <h3 className="text-black text-[20px] font-[500] mt-4">Making Every Transaction Easy to Track</h3>
+              <h3 className="text-black text-[15px] sm:text-[20px] font-medium mt-2 sm:mt-4">Making Every Transaction Easy to Track</h3>
 
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 Financial transactions need to feel traceable. We designed a dedicated transaction history experience where users can quickly see their previous conversions and understand the status of each transaction.
@@ -487,29 +488,29 @@ export default function SwapXNextCaseStudy() {
             <div className="border-t border-dashed border-neutral-300 w-full" />
 
             <div>
-              <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
+              <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug font-rounded">
                 Other Screens
               </h2>
 
-              <h3 className="text-black text-[20px] font-medium mt-4">Designing the Details That Complete the Experience</h3>
+              <h3 className="text-black text-[15px] sm:text-[20px] font-medium mt-2 sm:mt-4">Designing the Details That Complete the Experience</h3>
 
 
-              <h5 className="text-black font-medium text-[16px] mt-4">Notifications</h5>
+              <h5 className="text-black font-medium text-[14px] sm:text-[16px] mt-4">Notifications</h5>
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 Notifications keep users informed about important account activity, transaction updates, rate movements, and other relevant events. Rather than overwhelming users with alerts, the experience prioritizes information that can help them make decisions or take action.
               </p>
 
-              <h5 className="text-black font-medium text-[16px] mt-4">Profile & Tiers</h5>
+              <h5 className="text-black font-medium text-[14px] sm:text-[16px] mt-4">Profile & Tiers</h5>
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 The profile and settings area gives users control over their account information, security preferences, notifications, and other personal settings. The screens were structured to make account management straightforward without taking attention away from the core product.
               </p>
 
-              <h5 className="text-black font-medium text-[16px] mt-4">Security & Verification States</h5>
+              <h5 className="text-black font-medium text-[14px] sm:text-[16px] mt-4">Security & Verification States</h5>
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 We also designed supporting states for authentication, KYC, verification, errors, pending transactions, and successful actions. These moments may only appear for a few seconds, but they play an important role in making financial interactions feel safe and predictable.
               </p>
 
-              <h5 className="text-black font-medium text-[16px] mt-4">Empty, Loading & Error States</h5>
+              <h5 className="text-black font-medium text-[14px] sm:text-[16px] mt-4">Empty, Loading & Error States</h5>
               <p className="mt-4 text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed font-normal">
                 Every major flow was designed beyond the ideal scenario. Empty states help users understand what to do when they have no transaction history or haven't added an asset yet. Loading states provide feedback while information is being processed, while error states explain what went wrong and what the user can do next.
                 Together, these supporting screens helped create a more complete experience, one that doesn't just work when everything goes perfectly, but guides users through the moments in between.
@@ -582,7 +583,7 @@ export default function SwapXNextCaseStudy() {
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
+            <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
               Making Crypto Feel Less Complicated
             </h2>
 
@@ -620,7 +621,7 @@ export default function SwapXNextCaseStudy() {
 
           {/* Right Column Content */}
           <div className="lg:col-span-9">
-            <h2 className="text-[22px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
+            <h2 className="text-[18px] sm:text-[26px] md:text-[29px] font-bold text-neutral-950 tracking-tight leading-snug">
               Simplicity Is a Feature in Financial Products
             </h2>
 
@@ -646,25 +647,86 @@ export default function SwapXNextCaseStudy() {
       <section className="w-full bg-[#F8F8F8] border-t border-neutral-100">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-20">
           {/* Available Badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF7EE] text-[#299B75] border border-[#299B754D] text-[14px] font-medium tracking-wide">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#299B75]" />
+          <div
+            className="inline-flex items-center gap-[5.08px] px-3 py-1 rounded-full border border-[#299B75]/30 text-[#299B75] text-[13px] sm:text-[14px] font-medium tracking-wide shadow-2xs"
+            style={{
+              background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.04) 100%), #F2FFFF",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#299B75] shrink-0" />
             <span>Available</span>
           </div>
 
           {/* Heading */}
-          <h2 className="mt-5 text-[26px] sm:text-[32px] md:text-[40px] font-normal text-black tracking-tight leading-[1.2] max-w-2xl">
+          <h2 className="mt-5 text-[22px] sm:text-[32px] md:text-[40px] font-normal text-black tracking-tight leading-[1.25] max-w-2xl font-rounded">
             Always searching for new problems,
             <br />
             fun teams and great ideas.
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-3 text-[14px] sm:text-[16.5px] text-[#00000080] font-normal">
-            If this sounds like you, reach out🙂
-          </p>
+          <div className="flex items-center mt-2.5 sm:mt-3 ">
+            <p className="text-[14px] sm:text-[16.5px] text-[#00000080] font-normal">
+              If this sounds like you, reach out
+            </p>
+            <span>🙂</span>
+          </div>
 
-          {/* Email & Copy Button Row */}
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-6 pt-2">
+          {/* Mobile view (< sm): single cohesive row matching design spec */}
+          <div className="flex sm:hidden items-center justify-between gap-3 mt-7 w-full pt-1">
+            <a
+              href="mailto:oluwatobiomosewa@gmail.com"
+              className="inline-flex items-center gap-2.5 min-w-0 group cursor-pointer"
+            >
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/direct-send.png"
+                  alt="Outbox Tray"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <span className="text-[18px] font-[500] font-rounded text-neutral-900 tracking-tight whitespace-nowrap">
+                oluwatobiomosewa@gmail.com
+              </span>
+            </a>
+
+            {/* Mobile Copy Icon Button */}
+            <button
+              onClick={handleCopyEmail}
+              aria-label="Copy email address"
+              className="p-1 text-neutral-900 hover:text-neutral-600 active:scale-90 transition cursor-pointer shrink-0"
+            >
+              {copiedEmail ? (
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-emerald-600 w-6 h-6"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              ) : (
+                <Image
+                  src="/images/copy.png"
+                  alt="Copy"
+                  width={24}
+                  height={24}
+                  className="size-10 object-contain"
+                />
+              )}
+            </button>
+          </div>
+
+          {/* Desktop & Tablet View (>= sm): Large email & Copy pill button */}
+          <div className="hidden sm:flex flex-wrap items-center justify-between gap-6 mt-8 pt-2">
             <a
               href="mailto:oluwatobiomosewa@gmail.com"
               className="inline-flex items-center gap-3.5 group cursor-pointer"
@@ -797,6 +859,7 @@ export default function SwapXNextCaseStudy() {
           </div>
         )
       }
+      <MobileNav />
     </div >
   );
 }

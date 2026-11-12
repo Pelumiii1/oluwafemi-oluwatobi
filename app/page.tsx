@@ -228,7 +228,7 @@ export default function Home() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1BA25C] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1BA25C]" />
                 </span>
-                <span className="text-[16px] font-medium text-[#1BA25C] tracking-wide font-rounded">
+                <span className="text-[14px] md:text-[16px] font-[400] text-[#1BA25C] tracking-wide font-rounded">
                   Available for work
                 </span>
               </div>

@@ -222,7 +222,7 @@ export default function AboutPage() {
           </div>
 
           {/* Subtext */}
-          <p className="text-[18px] text-[#5C5C5C] mt-5 sm:mt-5 font-normal">
+          <p className="text-[14px] md:text-[18px] text-[#5C5C5C] mt-5 sm:mt-5 font-normal font-rounded">
             Currently: Designing products, building things, and looking for
             interesting problems to solve.
           </p>
@@ -303,25 +303,44 @@ export default function AboutPage() {
 
           {/* Skills Section */}
           <div className="mt-14 sm:mt-18">
-            <h2 className="text-[17px] sm:text-[19px] font-bold text-neutral-900 tracking-tight mb-4">
+            <h2 className="text-[20px] sm:text-[24px] font-bold text-black font-rounded tracking-tight mb-4">
               Skills
             </h2>
-            <div className="flex flex-wrap items-center text-[14px] sm:text-[15px] text-neutral-800">
+
+            {/* Mobile Layout (< sm) strictly matching design */}
+            <div className="flex sm:hidden flex-col gap-3 text-[13.5px] xs:text-[14px] text-black font-normal font-rounded">
+              <div className="flex items-center flex-nowrap whitespace-nowrap overflow-x-auto no-scrollbar">
+                <span>Design Strategy</span>
+                <span className="mx-2 xs:mx-2.5 text-black select-none">|</span>
+                <span>UX Research</span>
+                <span className="mx-2 xs:mx-2.5 text-black select-none">|</span>
+                <span>UI/UX Design</span>
+                <span className="mx-2 xs:mx-2.5 text-black select-none">|</span>
+              </div>
+              <div className="flex items-center flex-nowrap whitespace-nowrap">
+                <span>Prototyping</span>
+                <span className="mx-2 xs:mx-2.5 text-black select-none">|</span>
+                <span>Interaction Design</span>
+              </div>
+            </div>
+
+            {/* Desktop / Tablet Layout (>= sm) */}
+            <div className="hidden sm:flex flex-wrap items-center text-[20px] text-black font-rounded">
               <span>Design Strategy</span>
-              <span className="mx-3.5 text-neutral-300 select-none">|</span>
+              <span className="mx-3.5 text-black select-none">|</span>
               <span>UX Research</span>
-              <span className="mx-3.5 text-neutral-300 select-none">|</span>
+              <span className="mx-3.5 text-black select-none">|</span>
               <span>UI/UX Design</span>
-              <span className="mx-3.5 text-neutral-300 select-none">|</span>
+              <span className="mx-3.5 text-black select-none">|</span>
               <span>Prototyping</span>
-              <span className="mx-3.5 text-neutral-300 select-none">|</span>
+              <span className="mx-3.5 text-black select-none">|</span>
               <span>Interaction Design</span>
             </div>
           </div>
 
           {/* My Tools Section */}
           <div className="mt-14 sm:mt-18">
-            <h2 className="text-[17px] sm:text-[19px] font-bold text-neutral-900 tracking-tight mb-5">
+            <h2 className="text-[24px] font-bold text-black font-rounded tracking-tight mb-5">
               My Tools
             </h2>
             <div className="flex items-center gap-3">
@@ -419,7 +438,7 @@ export default function AboutPage() {
 
           {/* Past Experiences Section */}
           <div className="mt-14 sm:mt-18">
-            <h2 className="text-[17px] sm:text-[19px] font-bold text-neutral-900 tracking-tight mb-6">
+            <h2 className="text-[24px] font-bold font-rounded text-black tracking-tight mb-6">
               Past Experiences
             </h2>
             <div className="space-y-4">
@@ -494,25 +513,87 @@ export default function AboutPage() {
       <section className="w-full bg-[#F8F8F8] border-t border-neutral-100">
         <div className="w-full max-w-350 mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-20">
           {/* Available Badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF7EE] text-[#299B75] border border-[#299B754D] text-[15px] font-medium tracking-wide">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#299B75]" />
+          <div
+            className="inline-flex items-center gap-[5.08px] px-3 py-1 rounded-full border border-[#299B75]/30 text-[#299B75] text-[13px] sm:text-[14px] font-medium tracking-wide shadow-2xs"
+            style={{
+              background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.04) 100%), #F2FFFF",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#299B75] shrink-0" />
             <span>Available</span>
           </div>
 
           {/* Heading */}
-          <h2 className="mt-5 text-[26px] sm:text-[32px] md:text-[40px] font-normal text-black tracking-tight leading-[1.2] max-w-2xl">
+          <h2 className="mt-5 text-[22px] sm:text-[32px] md:text-[40px] font-normal text-black tracking-tight leading-[1.25] max-w-2xl font-rounded">
             Always searching for new problems,
             <br />
             fun teams and great ideas.
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-3 text-[13px] sm:text-[17px] text-[#00000080] font-normal">
-            If this sounds like you, reach out🙂
-          </p>
+          <div className="flex items-center mt-2.5 sm:mt-3 ">
+            <p className="text-[14px] sm:text-[16.5px] text-[#00000080] font-normal">
+              If this sounds like you, reach out
+            </p>
+            <span>🙂</span>
+          </div>
 
-          {/* Email & Copy Button Row */}
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-6 pt-2">
+
+          {/* Mobile view (< sm): single cohesive row matching design spec */}
+          <div className="flex sm:hidden items-center justify-between gap-3 mt-7 w-full pt-1">
+            <a
+              href="mailto:oluwatobiomosewa@gmail.com"
+              className="inline-flex items-center gap-2.5 min-w-0 group cursor-pointer"
+            >
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/direct-send.png"
+                  alt="Outbox Tray"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <span className="text-[18px] font-[500] font-rounded text-neutral-900 tracking-tight whitespace-nowrap">
+                oluwatobiomosewa@gmail.com
+              </span>
+            </a>
+
+            {/* Mobile Copy Icon Button */}
+            <button
+              onClick={handleCopyEmail}
+              aria-label="Copy email address"
+              className="p-1 text-neutral-900 hover:text-neutral-600 active:scale-90 transition cursor-pointer shrink-0"
+            >
+              {copiedEmail ? (
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-emerald-600 w-6 h-6"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              ) : (
+                <Image
+                  src="/images/copy.png"
+                  alt="Copy"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 object-contain"
+                />
+              )}
+            </button>
+          </div>
+
+          {/* Desktop & Tablet View (>= sm): Large email & Copy pill button */}
+          <div className="hidden sm:flex flex-wrap items-center justify-between gap-6 mt-8 pt-2">
             <a
               href="mailto:oluwatobiomosewa@gmail.com"
               className="inline-flex items-center gap-3.5 group cursor-pointer"
@@ -563,7 +644,7 @@ export default function AboutPage() {
                     alt="Copy"
                     width={14}
                     height={14}
-                    className="size-7 object-contain"
+                    className="size-10 object-contain"
                   />
                   <span>Copy</span>
                 </>
