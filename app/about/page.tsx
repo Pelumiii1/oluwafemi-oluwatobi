@@ -438,25 +438,25 @@ export default function AboutPage() {
 
           {/* Past Experiences Section */}
           <div className="mt-14 sm:mt-18">
-            <h2 className="text-[24px] font-bold font-rounded text-black tracking-tight mb-6">
+            <h2 className="text-[24px] font-bold font-rounded text-black tracking-tight mb-5 sm:mb-6">
               Past Experiences
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-3.5 sm:space-y-4">
               {PAST_EXPERIENCES.map((exp, index) => (
                 <div
                   key={index}
-                  className="flex items-baseline justify-between gap-3 text-[14px] sm:text-[15px]"
+                  className="flex items-baseline justify-between gap-1.5 sm:gap-3 font-rounded"
                 >
-                  <div className="flex items-baseline gap-2.5 min-w-0 shrink-0">
-                    <span className="font-normal text-[#232323] text-[20px]">
+                  <div className="flex items-baseline gap-1.5 sm:gap-2.5 min-w-0">
+                    <span className="font-normal text-[#171717] text-[14px] sm:text-[20px] whitespace-nowrap">
                       {exp.role}
                     </span>
-                    <span className="text-[12.5px] sm:text-[14px] text-[#475569] font-normal">
+                    <span className="text-[12px] sm:text-[14px] text-[#475569] font-medium whitespace-nowrap">
                       {exp.company}
                     </span>
                   </div>
-                  <div className="flex-1 border-b border-dotted border-neutral-300/80 mx-2 self-center translate-y-0.5" />
-                  <span className="text-[12.5px] sm:text-[15px] text-[#232323] font-[500] shrink-0">
+                  <div className="flex-1 border-b border-dotted border-neutral-300 mx-1.5 sm:mx-2.5 self-center translate-y-0.5 min-w-4" />
+                  <span className="text-[14px] sm:text-[15px] text-[#232323] font-medium sm:font-medium shrink-0 whitespace-nowrap">
                     {exp.period}
                   </span>
                 </div>
@@ -465,20 +465,20 @@ export default function AboutPage() {
           </div>
 
           {/* Find me on Row */}
-          <div className="mt-14 sm:mt-18 flex items-center gap-3.5 text-[12.5px] text-neutral-500">
+          <div className="mt-12 sm:mt-18 flex items-center gap-3.5 text-[13px] sm:text-[14px] text-neutral-800 font-rounded">
             <span>Find me on</span>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3.5">
               <a
-                href="https://read.cv"
+                href="https://contra.com/oluwatobi_oluwafemi_1jzd71pz/work?r=oluwatobi_oluwafemi_1jzd71pz"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="ReadCV profile"
+                aria-label="Contra profile"
                 className="text-neutral-800 hover:text-black transition cursor-pointer"
               >
                 <FourPointStarIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://dribbble.com"
+                href="https://dribbble.com/Holuphemy11"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Dribbble profile"
@@ -487,7 +487,7 @@ export default function AboutPage() {
                 <DribbbleIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/_femiii__"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X Twitter profile"
@@ -496,7 +496,7 @@ export default function AboutPage() {
                 <XTwitterIcon className="w-3.5 h-3.5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/oluwafemioluwatobi/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"

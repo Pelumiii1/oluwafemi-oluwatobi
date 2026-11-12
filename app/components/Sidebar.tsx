@@ -157,16 +157,16 @@ export function Sidebar() {
           {/* Social Links Row */}
           <div className="flex items-center gap-2 mt-5">
             <a
-              href="https://read.cv"
+              href="https://contra.com/oluwatobi_oluwafemi_1jzd71pz/work?r=oluwatobi_oluwafemi_1jzd71pz"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="CV profile"
+              aria-label="Contra profile"
               className="w-8 h-8 flex items-center justify-center text-neutral-800 hover:text-black transition-colors cursor-pointer"
             >
               <FourPointStarIcon className="size-5" />
             </a>
             <a
-              href="https://dribbble.com"
+              href="https://dribbble.com/Holuphemy11"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Dribbble profile"
@@ -175,7 +175,7 @@ export function Sidebar() {
               <DribbbleIcon className="size-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/_femiii__"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter) profile"
@@ -184,7 +184,7 @@ export function Sidebar() {
               <XTwitterIcon className="size-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/oluwafemioluwatobi/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
