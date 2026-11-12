@@ -208,9 +208,8 @@ export default function Home() {
     <>
       <PageLoader onComplete={() => setIsRevealed(true)} />
       <div
-        className={`min-h-screen md:h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-x-hidden md:overflow-hidden transition-transform duration-700 ease-out ${
-          isRevealed ? "scale-100" : "scale-[0.99]"
-        }`}
+        className={`min-h-screen md:h-screen w-full bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white flex flex-col md:flex-row overflow-x-hidden md:overflow-hidden transition-transform duration-700 ease-out ${isRevealed ? "scale-100" : "scale-[0.99]"
+          }`}
       >
         {/* Left Sidebar: Fixed Width of 306px and fixed on screen */}
         <Sidebar />
@@ -269,7 +268,7 @@ export default function Home() {
             </h2>
 
             {/* Bio Paragraphs */}
-            <div className="space-y-3 text-[12px] sm:text-[14px] text-black font-light font-rounded">
+            <div className="space-y-3 text-[14px] text-black font-light font-rounded">
               <p>
                 I’m Oluwafemi, a
                 {"  "} <strong className="font-semibold text-neutral-900">
